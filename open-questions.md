@@ -8,6 +8,15 @@ would freeze them too early.
 - In multi-value fields, Tab commits the value and keeps focus there. That
   departs from the W3C pattern and is waiting for feedback.
 - One checkbox per license, while the preferred UX is a single checkbox.
+- The product selection form is the one form whose submit button waits: until
+  a product, a mode and the license acceptance are given, with a line under
+  the button saying which is missing. It should probably behave like every
+  other form. Making it do so was tried while migrating the form to the new
+  forms stack, and left out so that
+  [#3791](https://github.com/agama-project/agama/pull/3791) could ship. Two
+  things to decide before retrying: whether the line under the button stays
+  once the attempt reports the same thing, and where focus goes after a
+  failed attempt.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Whether the summary should reopen the last storage view.

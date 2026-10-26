@@ -29,8 +29,18 @@ the user cannot change is shown as text, not as a locked input.
 *Why:* disabled controls are easy to miss, hard to read in some themes, and
 they offer something that cannot happen.
 
-*The exception:* a button that waits for an explicit acceptance, such as a
-license.
+*The exceptions:*
+
+- A button that sends something waits while it is being sent.
+- A dialog's confirm button may wait for the one thing it confirms, such as a
+  device picker's "Use…" until a device is picked.
+
+A form's submit button never waits for its fields, however short the form is.
+It stays available, and the attempt says what is missing or wrong.
+
+*Why:* a single step next to the button needs no explanation. A form is
+checked when it is submitted, and every form behaves the same way, so nobody
+has to guess which kind of button they are looking at.
 
 ## 4. Don't get in the way
 
