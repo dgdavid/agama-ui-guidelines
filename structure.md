@@ -63,7 +63,8 @@ title and a sentence on one side, the one thing to do on the other.
 | The action affects | It goes | Example |
 | --- | --- | --- |
 | The data of a form | Under the form: submit, then cancel | Accept / Cancel |
-| A whole section | In the section's header | "Add a connection" |
+| A whole section, such as adding to it | At the end of the section, after its content | "Add connection" |
+| A whole section, and is rarely needed | In the section's menu, in its header | "Reset to defaults" |
 | One item in a list | In that row's menu | Edit, Delete |
 | Nothing on this page, or rarely needed | "More options" in the header | Download logs |
 
