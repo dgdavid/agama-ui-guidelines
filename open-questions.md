@@ -17,6 +17,11 @@ would freeze them too early.
   things to decide before retrying: whether the line under the button stays
   once the attempt reports the same thing, and where focus goes after a
   failed attempt.
+- Settings applied at once could do nothing when the value already chosen is
+  chosen again. Storage menus send the request again today.
+- Settings applied at once could show the chosen value right away, before the
+  result arrives. Storage waits under the progress overlay today, and shows
+  the value once the result is back.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Whether the summary should reopen the last storage view.

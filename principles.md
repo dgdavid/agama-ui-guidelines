@@ -45,7 +45,9 @@ has to guess which kind of button they are looking at.
 ## 4. Don't get in the way
 
 - No errors while typing: input is checked when the user submits.
-- Nothing is saved until the user asks.
+- The user always knows when a choice takes effect: a form on submit, a page
+  that applies each choice at once by showing its result right away. Nothing
+  touches the system until the installation starts.
 - Focus never moves behind the user's back.
 - Nothing covers the screen longer than the work it waits for.
 
@@ -67,6 +69,10 @@ When there is a familiar pattern, use it before inventing a clever one.
 
 *Why:* two ways to do one thing double the questions and the clutter, and
 familiar behavior needs no explanation.
+
+*The exception:* the same setting may live in two places when each serves a
+different task, such as a quick change while viewing something and setting it
+while editing it. Both places always show the same value.
 
 ## 7. Plain words, in every language
 

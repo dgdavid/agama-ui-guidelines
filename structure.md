@@ -75,8 +75,22 @@ title and a sentence on one side, the one thing to do on the other.
 
 ## Forms
 
-- **One form per page, one submit.** Settings never save themselves one
-  checkbox at a time.
+**Two ways to edit settings.** The page and its controls tell the user which
+one applies:
+
+- **In a form**, with Accept and Cancel, on a page for creating or editing
+  something. Every checkbox, radio and field waits for the submit, even one
+  that would make sense on its own.
+- **Applied at once**, outside any form: a switch on a page that shows
+  something, or an action in a menu. Also areas where each choice changes a
+  calculated result, as in storage. These settings:
+  - never sit inside a form, and a form never holds a switch;
+  - show what each choice will cause while it is being chosen.
+
+The rest of this section is about forms.
+
+- **A form has one submit.** Its settings never save themselves one checkbox
+  at a time.
 - **Checked on submit.** After the first attempt, errors update as the user
   fixes them. Errors from the server show at the top of the form.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
