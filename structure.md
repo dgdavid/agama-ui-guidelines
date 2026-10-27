@@ -129,6 +129,12 @@ first rung that fits:
 - **Nothing is applied until confirmed.**
 - **Show before acting:** the configuration is shown before it is downloaded.
 - **A menu entry that opens a dialog ends in "…".**
+- **A side panel lives in the address** *(planned)*. Opening it adds one step
+  to the history, and moving to another item while it is open does not. Back
+  closes it; the next Back leaves the page.
+  *Why:* with no step at all, Back on a panel that covers the page leaves the
+  page by surprise; with a step for every item, leaving the page takes as many
+  Backs as items were looked at.
 
 ## Tables and lists
 
