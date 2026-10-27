@@ -32,9 +32,11 @@ Everything else in the UI can be argued about. These cannot.
 ## 1. The keyboard reaches everything
 
 Anything a mouse can do, the keyboard can do too: get there, use it, and get
-out again. Nothing ever traps the focus. Each control is one stop on the Tab
-key, and the arrow keys move around inside it. Focus is always visible,
-never clipped, and stands out at 3:1 in every theme.
+out again. Focus never gets stuck: a dialog keeps it inside while it is
+open, and there is always a way out. A control made of several parts, such as
+a group of radios, a menu or a row of tabs, is one stop on the Tab key, and
+the arrow keys move inside it. Focus is always visible, never clipped, and
+stands out at 3:1 in every theme.
 
 *Why:* installations happen on virtual machines, remote consoles and with
 assistive technology. A working mouse is never a given.
@@ -42,10 +44,12 @@ assistive technology. A working mouse is never a given.
 ## 2. Nobody gets less information
 
 Whatever the screen shows, a screen reader says. Color, position or a red
-border never carry meaning on their own. Behind each of them there is a name,
-a heading or an announcement.
+border never carry meaning on their own: words say the same thing, both on
+the screen and to the screen reader.
 
-*Why:* a hint that only the eyes can catch is a hint some users never get.
+*Why:* a hint that only the eyes can catch is a hint some users never get,
+and a hint carried only by color is lost on anyone who can't tell the colors
+apart.
 
 ## 3. If it can't be used, it isn't there
 

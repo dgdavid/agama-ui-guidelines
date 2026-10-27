@@ -20,18 +20,24 @@ Claims in the guidelines that still need checking.
   notes only, check the forms follow them.
 - [ ] "Typing in a combobox never picks a match on its own", "Enter and Space
   toggle an expandable section" and "Enter in a dialog's field submits the
-  dialog" (structure, Keyboard and focus): check the code follows them.
+  dialog, unless the field uses Enter itself" (structure, Keyboard and
+  focus): check the code follows them.
 - [ ] "A form that stays open after saving tells 'saved' apart from 'nothing
   changed'" and "Recomputing part of a form keeps the old content on screen"
   (structure, Feedback): check the code follows them.
 - [ ] "The header keeps the same height on every page" (structure, The
   header): check it, including the minimal layout's empty header.
-- [ ] "A control's accessible name starts with its visible label"
-  (structure, Words): comes from notes only, look for controls whose
-  `aria-label` replaces or reorders the visible text.
+- [ ] "A control's accessible name includes its visible label, word for
+  word" (structure, Words): comes from notes only, look for controls whose
+  `aria-label` replaces or rewords the visible text.
+- [ ] "Words say the same thing, both on the screen and to the screen reader"
+  (principles, 2): look for meaning carried by color, such as a status or an
+  error, whose only text is hidden from sight.
 - [ ] "Inline styles only for computed one-off values" and "PatternFly utility
   classes come from its style modules" (guidelines, Styling): check the 21
   files with inline styles, and how utility classes are used.
+- [ ] "High contrast is PatternFly's AAA theme" (structure, Appearance):
+  check that PatternFly's high contrast theme does reach 7:1.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
   and 400% zoom, have never been tried.
 

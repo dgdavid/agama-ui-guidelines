@@ -354,7 +354,8 @@ looking at": the page stays in use.
 - **Enter and Space toggle an expandable section;** the arrow keys never do.
 - **A widget that takes every key has a stop in front of it,** with a key to
   go in and another to come out, both said on screen. The terminal is one.
-- **Enter in a dialog's field submits the dialog.**
+- **Enter in a dialog's field submits the dialog,** unless the field uses
+  Enter itself, such as an open list of options.
 - **Changing the view of a page never moves focus:** a filter, the sort
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
@@ -382,8 +383,10 @@ looking at": the page stays in use.
 - **Error messages say what is wrong with that field.** "Required" and "wrong
   format" are different messages, and a format error shows an example ("e.g.
   20 GiB"). The label, the help and the errors use the same word.
-- **A control's accessible name starts with its visible label,** so voice
-  control finds it by what the user sees.
+- **A control's accessible name includes its visible label, word for word,**
+  so voice control finds it by what the user sees. Added context, such as
+  "Hostname" in "Hostname mode", goes around the label, never in place of
+  it.
 - **Plain words, not symbols or internals:** "at least 5 GiB", not "≥". No
   internal names ("space policy"), outcomes rather than mechanisms, and never
   "the control below".
@@ -417,9 +420,10 @@ looking at": the page stays in use.
 - **One status, one color,** the same in alerts, help text and icons. No
   status color looks like a link, and when one collides with the brand color,
   the brand changes.
-- **Contrast is AA:** 4.5:1 for text, muted and disabled text included, and
-  3:1 for icons, borders, focus rings and everything else that isn't text.
-  High contrast is PatternFly's AAA theme, and no branding overrides it.
+- **Contrast is AA:** 4.5:1 for text, and 3:1 for large text and for the
+  icons, borders and focus rings needed to see a control or its state. Muted
+  and disabled text get 4.5:1 too, which is stricter than WCAG asks. High
+  contrast is PatternFly's AAA theme, and no branding overrides it.
   *Why:* AAA in the default themes would flatten the visual hierarchy, and
   the high contrast setting exists for users who need more.
 - **When the system asks for reduced motion, nothing moves.**
