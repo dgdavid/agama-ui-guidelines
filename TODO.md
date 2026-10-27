@@ -74,6 +74,10 @@ Claims in the guidelines that still need checking.
   item from its own row menu.
 - [ ] "A toast never holds the only copy of an error or action" (structure,
   Feedback): check what every toast holds.
+- [ ] "Focus is always visible" (principles, 1) in forced colors, such as
+  Firefox overriding the page colors: buttons draw their focus ring as a
+  box shadow, which forced colors remove. Check it, and add a transparent
+  outline if the ring disappears.
 - [ ] Run the screen size checks (structure, Screen sizes): 320, 375 and 768
   wide, both orientations, and 400% zoom, have never been tried.
 
