@@ -54,19 +54,3 @@ answers:
 - When to ask before a destructive action.
 - Anatomy of the storage device side panel (in progress).
 
-## Follow-ups in the Agama repository
-
-- `form/conventions.md` is 2469 lines. Once the structure page holds the field
-  patterns in plain words, it can shrink to its technical decisions and move
-  under `doc/ui/guidelines/`.
-- Popup TSDoc carries a structure decision (dismissible vs must-answer
-  dialogs). The structure page now states it, and the TSDoc can link there
-  instead.
-- The principles could explain design choices to users too, so they are
-  written to go on the website unchanged.
-- The "still living next to their code" table in `doc/ui/guidelines.md` merges
-  into Decisions. Those docs move under `doc/ui/guidelines/` one by one,
-  starting with forms once it is trimmed, about 60% shorter.
-- Weak TSDoc to improve when touched: `TextField`, `InstallerOptionsMenu`,
-  `NestedContent`.
-- `web/README.md` is stale: it still mentions JSDoc and `@ts-check`.
