@@ -41,6 +41,8 @@ behind anything else on the screen, and stands out at 3:1 in every theme.
 *Why:* installations happen on virtual machines, remote consoles and with
 assistive technology. A working mouse is never a given.
 
+*Standards:* WCAG [2.1.1], [2.1.2], [2.4.3], [2.4.7], [2.4.11], [1.4.11].
+
 ## 2. Nobody gets less information
 
 Whatever the screen shows, a screen reader says. Color, position or a red
@@ -50,6 +52,8 @@ the screen and to the screen reader.
 *Why:* a hint that only the eyes can catch is a hint some users never get,
 and a hint carried only by color is lost on anyone who can't tell the colors
 apart.
+
+*Standards:* WCAG [1.3.1], [1.3.3], [1.4.1], [4.1.2], [4.1.3].
 
 ## 3. If it can't be used, it isn't there
 
@@ -91,6 +95,8 @@ has to guess which kind of button they are looking at.
 *Why:* a screen that changes while you are still working on it is
 disorienting for everyone, and more so for screen reader users.
 
+*Standards:* WCAG [3.2.2], [3.3.1].
+
 ## 5. Never lose what the user did
 
 Typed text survives switching options. A deliberate choice is never overridden
@@ -100,6 +106,8 @@ Back button and a shared link.
 
 *Why:* redoing work the installer threw away is the fastest way to lose a
 user's trust.
+
+*Standards:* WCAG [3.3.7].
 
 ## 6. One way to do each thing
 
@@ -112,6 +120,8 @@ familiar behavior needs no explanation.
 *The exception:* the same setting may live in two places when each serves a
 different task, such as a quick change while viewing something and setting it
 while editing it. Both places always show the same value.
+
+*Standards:* WCAG [3.2.3], [3.2.4].
 
 ## 7. Plain words, in every language
 
@@ -135,6 +145,7 @@ half-fitting component still leaves the gap.
 
 Where we look: [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), the
 [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/),
+[Using ARIA](https://www.w3.org/TR/using-aria/) (native HTML before ARIA),
 PatternFly's own guidelines, and the work of people and teams like the
 [GOV.UK Design System](https://design-system.service.gov.uk/),
 [Heydon Pickering](https://inclusive-components.design/) or
@@ -148,3 +159,25 @@ screen gets a layout that fits, and a large one gets its space put to use.
 
 *Why:* the installer can be driven from a virtual machine window, a laptop, a
 tablet or a phone, and zoom changes the width a layout gets on any of them.
+
+*Standards:* WCAG [1.3.4], [1.4.4], [1.4.10].
+
+[1.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html "Info and Relationships"
+[1.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html "Sensory Characteristics"
+[1.3.4]: https://www.w3.org/WAI/WCAG22/Understanding/orientation.html "Orientation"
+[1.4.1]: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html "Use of Color"
+[1.4.4]: https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html "Resize Text"
+[1.4.10]: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html "Reflow"
+[1.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html "Non-text Contrast"
+[2.1.1]: https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html "Keyboard"
+[2.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html "No Keyboard Trap"
+[2.4.3]: https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html "Focus Order"
+[2.4.7]: https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html "Focus Visible"
+[2.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html "Focus Not Obscured (Minimum)"
+[3.2.2]: https://www.w3.org/WAI/WCAG22/Understanding/on-input.html "On Input"
+[3.2.3]: https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html "Consistent Navigation"
+[3.2.4]: https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html "Consistent Identification"
+[3.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html "Error Identification"
+[3.3.7]: https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html "Redundant Entry"
+[4.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html "Name, Role, Value"
+[4.1.3]: https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html "Status Messages"

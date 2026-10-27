@@ -98,6 +98,8 @@ Installation (summary, at /)
   keyboard focus, and Escape hides it. Its words are the control's accessible
   name, so a screen reader doesn't hear them twice.
 
+*Standards:* WCAG [1.4.13], [2.5.3].
+
 ## Pages
 
 | Layout | For | Examples |
@@ -127,6 +129,8 @@ title and a sentence on one side, the one thing to do on the other.
   "Agama" everywhere.
   *Why:* the tab title is the first thing a screen reader says after moving
   to a page, and how anyone finds the tab among others.
+
+*Standards:* WCAG [1.3.1], [1.3.2], [2.4.2], [2.4.3], [2.4.6].
 
 ## Where actions go
 
@@ -162,6 +166,8 @@ title and a sentence on one side, the one thing to do on the other.
   same horizontal dots everywhere.
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
+
+*Standards:* WCAG [3.3.4].
 
 ## Forms
 
@@ -242,6 +248,8 @@ first level that fits:
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
 
+*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2].
+
 ## Pages, side panels and dialogs
 
 Pick by the interaction, not by the look. A dialog says "stop and deal with
@@ -259,6 +267,8 @@ looking at": the page stays in use.
 - **Opening a dialog or a side panel moves focus into it,** onto the current
   choice if there is one. Closing it returns focus to the control that opened
   it, or to the nearest sensible place when that control is gone.
+
+*Standards:* WCAG [2.4.3]; APG [Dialog (Modal)].
 
 ### Side panels
 
@@ -291,6 +301,8 @@ looking at": the page stays in use.
 - **Show before acting:** the configuration is shown before it is downloaded.
 - **A menu entry that opens a dialog ends in "…".**
 
+*Standards:* APG [Dialog (Modal)], [Alert dialog].
+
 ## Tables and lists
 
 - **Rows highlight on hover and on keyboard focus**, but they don't pretend to
@@ -318,6 +330,8 @@ looking at": the page stays in use.
   a shared link lands on the same view. Tables inside dialogs keep them to
   themselves, the layout never goes in the address, and typing in a filter
   doesn't add a history step per key.
+
+*Standards:* WCAG [1.3.1], [4.1.3].
 
 ## Feedback
 
@@ -350,6 +364,8 @@ looking at": the page stays in use.
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
 
+*Standards:* WCAG [2.2.1], [4.1.3].
+
 ## Keyboard and focus
 
 - **In a dropdown, the arrow keys explore and Enter or Space commits.**
@@ -370,6 +386,8 @@ looking at": the page stays in use.
 - **Moving through a list never moves focus into the side panel**
   *(playground)*. Going in takes a deliberate step.
 - **A failed submit brings its alert into view,** not the top of the page.
+
+*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion].
 
 ## Words
 
@@ -410,6 +428,8 @@ looking at": the page stays in use.
   same place. New text waits, tracked as a follow-up, and strings that will be
   needed are reserved early.
 
+*Standards:* WCAG [1.3.3], [2.4.4], [2.5.3], [3.1.2], [3.3.1], [3.3.3].
+
 ## Appearance
 
 - **Two independent settings:** light, dark or follow the system; and normal or
@@ -440,6 +460,8 @@ looking at": the page stays in use.
 - **Supported browsers:** Firefox, the browser on the ISO, and current
   standard engines. No workarounds for older ones.
 
+*Standards:* WCAG [1.4.1], [1.4.3], [1.4.11], [2.3.3].
+
 ## Screen sizes
 
 - **Every screen works from a phone to a wide monitor.** Check it at 320 wide
@@ -466,6 +488,8 @@ looking at": the page stays in use.
 - **A feature that cannot fit says so** instead of squeezing in: the terminal
   says it is unavailable below 1024×768.
 
+*Standards:* WCAG [1.3.4], [1.4.4], [1.4.10], [2.4.11]; APG [Dialog (Modal)].
+
 ## Terminal
 
 - **It docks at the bottom of the window, splitting the screen.** It is not a
@@ -474,6 +498,8 @@ looking at": the page stays in use.
 - **It opens from "More options".** The session survives moving between pages.
 - **It stays available during and after the installation.**
 - **It has a stop in front of it:** Enter goes in, Ctrl+Shift+L comes back out.
+
+*Standards:* WCAG [2.1.2].
 
 ## Recipes
 
@@ -499,3 +525,35 @@ looking at": the page stays in use.
 3. Give it a name and a confirm button that says what it does.
 
 Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
+
+[1.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html "Info and Relationships"
+[1.3.2]: https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html "Meaningful Sequence"
+[1.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html "Sensory Characteristics"
+[1.3.4]: https://www.w3.org/WAI/WCAG22/Understanding/orientation.html "Orientation"
+[1.4.1]: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html "Use of Color"
+[1.4.3]: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html "Contrast (Minimum)"
+[1.4.4]: https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html "Resize Text"
+[1.4.10]: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html "Reflow"
+[1.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html "Non-text Contrast"
+[1.4.13]: https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html "Content on Hover or Focus"
+[2.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html "No Keyboard Trap"
+[2.2.1]: https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html "Timing Adjustable"
+[2.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html "Animation from Interactions (AAA)"
+[2.4.2]: https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html "Page Titled"
+[2.4.3]: https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html "Focus Order"
+[2.4.4]: https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html "Link Purpose (In Context)"
+[2.4.6]: https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html "Headings and Labels"
+[2.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html "Focus Not Obscured (Minimum)"
+[2.5.3]: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html "Label in Name"
+[3.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html "Language of Parts"
+[3.2.2]: https://www.w3.org/WAI/WCAG22/Understanding/on-input.html "On Input"
+[3.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html "Error Identification"
+[3.3.2]: https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html "Labels or Instructions"
+[3.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html "Error Suggestion"
+[3.3.4]: https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html "Error Prevention (Legal, Financial, Data)"
+[4.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html "Name, Role, Value"
+[4.1.3]: https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html "Status Messages"
+[Accordion]: https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+[Alert dialog]: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
+[Combobox]: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+[Dialog (Modal)]: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
