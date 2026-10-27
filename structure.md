@@ -98,7 +98,8 @@ Installation (summary, at /)
   keyboard focus, and Escape hides it. Its words are the control's accessible
   name, so a screen reader doesn't hear them twice.
 
-*Standards:* WCAG [1.4.13], [2.5.3].
+*Standards:* WCAG [1.4.13], [2.5.3]. See also Sara Soueidan on
+[icon buttons][ss-icons].
 
 ## Pages
 
@@ -331,7 +332,8 @@ looking at": the page stays in use.
   themselves, the layout never goes in the address, and typing in a filter
   doesn't add a history step per key.
 
-*Standards:* WCAG [1.3.1], [4.1.3].
+*Standards:* WCAG [1.3.1], [4.1.3]. See also Sara Soueidan on
+[keyboard-friendly listings][ss-listings].
 
 ## Feedback
 
@@ -364,7 +366,8 @@ looking at": the page stays in use.
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
 
-*Standards:* WCAG [2.2.1], [4.1.3].
+*Standards:* WCAG [2.2.1], [4.1.3]. See also Sara Soueidan on live regions,
+[part 1][ss-live-1] and [part 2][ss-live-2].
 
 ## Keyboard and focus
 
@@ -429,6 +432,7 @@ looking at": the page stays in use.
   needed are reserved early.
 
 *Standards:* WCAG [1.3.3], [2.4.4], [2.5.3], [3.1.2], [3.3.1], [3.3.3].
+See also Sara Soueidan on [text labels][ss-labels].
 
 ## Appearance
 
@@ -557,3 +561,8 @@ Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
 [Alert dialog]: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
 [Combobox]: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
 [Dialog (Modal)]: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+[ss-icons]: https://www.sarasoueidan.com/blog/accessible-icon-buttons/ "Accessible Icon Buttons"
+[ss-listings]: https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/ "Optimizing keyboard navigation using tabindex and ARIA"
+[ss-live-1]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/ "Accessible notifications with ARIA Live Regions (Part 1)"
+[ss-live-2]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/ "Accessible notifications with ARIA Live Regions (Part 2)"
+[ss-labels]: https://www.sarasoueidan.com/blog/accessible-text-labels/ "Accessible Text Labels For All"

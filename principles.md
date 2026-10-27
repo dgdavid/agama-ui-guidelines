@@ -42,6 +42,7 @@ behind anything else on the screen, and stands out at 3:1 in every theme.
 assistive technology. A working mouse is never a given.
 
 *Standards:* WCAG [2.1.1], [2.1.2], [2.4.3], [2.4.7], [2.4.11], [1.4.11].
+See also Sara Soueidan on [focus indicators][ss-focus].
 
 ## 2. Nobody gets less information
 
@@ -182,3 +183,4 @@ tablet or a phone, and zoom changes the width a layout gets on any of them.
 [3.3.7]: https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html "Redundant Entry"
 [4.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html "Name, Role, Value"
 [4.1.3]: https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html "Status Messages"
+[ss-focus]: https://www.sarasoueidan.com/blog/focus-indicators/ "A guide to designing accessible, WCAG-conformant focus indicators"
