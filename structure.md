@@ -69,8 +69,14 @@ title and a sentence on one side, the one thing to do on the other.
 | One item in a list | In that row's menu | Edit, Delete |
 | Nothing on this page, or rarely needed | "More options" in the header | Download logs |
 
-- **Cancel goes back, and never asks:** it already means "discard". *When to
-  confirm destructive actions is still to be agreed.*
+- **Cancel goes back, and never asks:** it already means "discard".
+- **Ask only before writing to the disks:** installing, or formatting a DASD
+  now. The confirm button says what it does ("Format now") and uses the danger
+  style.
+  *Why:* everything else can still be changed before installing, so a
+  question would only slow the user down.
+- **Everything else shows its cost while it is being chosen,** naming what
+  is lost ("including Windows 11") rather than asking afterwards.
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
 
@@ -102,7 +108,6 @@ The rest of this section is about forms.
   no examples that repeat the default value.
 - **Values the installer fills in step aside once the user types.** It never
   overwrites the user's own text.
-- **Anything that loses data says so,** right next to the choice.
 
 How visible a field should be depends on how many people need it. Pick the
 first rung that fits:

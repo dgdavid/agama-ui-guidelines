@@ -59,6 +59,5 @@ The structure page marks these as *to be agreed* rather than inventing
 answers:
 
 - Button order inside forms and dialogs.
-- When to ask before a destructive action.
 - Anatomy of the storage device side panel (in progress).
 
