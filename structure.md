@@ -74,9 +74,20 @@ Installation (summary, at /)
 Pages that stand alone usually lay out their content side by side: an icon, a
 title and a sentence on one side, the one thing to do on the other.
 
-- **One title per page**, and sections below it. No heading level is skipped.
+- **One title per page, and sections below it.** Heading levels follow the
+  outline: sections start at h2, and nothing inside the page adds a second
+  h1, an empty state included. How big a heading looks is a design choice,
+  apart from its level.
 - **A section has a visible title or no name at all.** An invisible name is the
   last resort.
+- **Named sections are landmarks; controls that belong together are a
+  group.** A set of related controls under a heading is a group named by that
+  heading, not a section of its own.
+  *Why:* screen reader users jump between landmarks, so each one has to be a
+  real part of the page.
+- **Pages have no Back button.** The breadcrumb leads up, and the browser goes
+  back. A page that has to send the user elsewhere uses a link named after
+  where it goes.
 - **The reading order is the screen order.** Layouts also work right to left.
 
 ## Where actions go
