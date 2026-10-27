@@ -7,6 +7,28 @@ built in from the start, not added later as a layer on top.
 Nine rules. When a design choice runs into one of them, the rule wins.
 Everything else in the UI can be argued about. These cannot.
 
+## At a glance
+
+1. [The keyboard reaches everything](#1-the-keyboard-reaches-everything):
+   anything a mouse can do, the keyboard can do too.
+2. [Nobody gets less information](#2-nobody-gets-less-information): whatever
+   the screen shows, a screen reader says.
+3. [If it can't be used, it isn't there](#3-if-it-cant-be-used-it-isnt-there):
+   no greyed-out controls, the reason in words instead.
+4. [Don't get in the way](#4-dont-get-in-the-way): no errors while typing,
+   and no focus moving behind the user's back.
+5. [Never lose what the user did](#5-never-lose-what-the-user-did): typed
+   text and deliberate choices survive.
+6. [One way to do each thing](#6-one-way-to-do-each-thing): a single path
+   per task, familiar patterns first.
+7. [Plain words, in every language](#7-plain-words-in-every-language):
+   written for users, and written to be translated.
+8. [Standards first](#8-standards-first-our-own-code-when-they-fall-short):
+   HTML, then the W3C patterns, then PatternFly, our own code when they fall
+   short.
+9. [Every screen, every zoom](#9-every-screen-every-zoom): a layout that fits
+   small screens and puts large ones to use.
+
 ## 1. The keyboard reaches everything
 
 Anything a mouse can do, the keyboard can do too: get there, use it, and get

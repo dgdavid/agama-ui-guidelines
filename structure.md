@@ -3,6 +3,37 @@
 The shape of the interface, and the reason behind each part. Read
 [the principles](principles.md) first: this page applies them.
 
+## At a glance
+
+- [The map](#the-map): the summary is the hub, one line per area showing the
+  real choice, and installing is a deliberate step.
+- [The header](#the-header): the left says where you are, the right holds the
+  same tools on every page, and there is no call to action.
+- [Pages](#pages): one title with sections below it, named sections as
+  landmarks, and no Back button.
+- [Where actions go](#where-actions-go): Cancel never asks, a confirmation
+  only before writing to the disks, destructive actions last.
+- [Forms](#forms): settings in a form or applied at once, one submit,
+  checked on submit, and the control picked by the choice it offers.
+- [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): picked by
+  the interaction. A side panel holds details, a dialog blocks the page.
+- [Tables and lists](#tables-and-lists): rows open their side panel through a
+  real link, long names are cut in the middle, the view lives in the address.
+- [Feedback](#feedback): background work in the progress monitor, the kind of
+  empty said, one place for announcements.
+- [Keyboard and focus](#keyboard-and-focus): arrows explore, Enter commits,
+  and changing the view never moves focus.
+- [Words](#words): controls instruct and reports describe, links named after
+  where they go, plain words that translate well.
+- [Appearance](#appearance): looks match importance, a status is text, one
+  color per status, AA contrast.
+- [Screen sizes](#screen-sizes): from a phone to a wide monitor, no maximum
+  width, the side panel covering the page on narrow windows.
+- [Terminal](#terminal): docked at the bottom, always available, with a stop
+  in front of it.
+- [Recipes](#recipes): the steps for a new setting, a new area or a new
+  dialog.
+
 ## The map
 
 ```

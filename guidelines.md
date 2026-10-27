@@ -4,6 +4,19 @@ How to build what [the structure](structure.md) describes. Each entry settles
 a question that keeps coming back in reviews, so it gets decided once and
 looked up afterwards.
 
+## At a glance
+
+- [Decisions](#decisions): the technical docs that settle recurring
+  questions, from URL state to theming.
+- [Translations](#translations): user-facing text is typed
+  `TranslatedString`, and code uses the words the UI shows.
+- [Styling](#styling): `agm-` classes, PatternFly restyled through its
+  tokens, logical properties.
+- [Components worth reading first](#components-worth-reading-first): where
+  the TSDoc explains a pattern.
+- [Tools](#tools): checking contrast.
+- [Adding a guideline](#adding-a-guideline): when a topic earns a page.
+
 ## Decisions
 
 | Topic | Answers |
