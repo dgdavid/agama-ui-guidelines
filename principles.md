@@ -1,5 +1,9 @@
 # UI principles
 
+Everyone can use Agama comfortably, however they use it: with a mouse, a
+touch screen, only a keyboard, a screen reader, or zoomed in. Accessibility is
+built in from the start, not added later as a layer on top.
+
 Nine rules. When a design choice runs into one of them, the rule wins.
 Everything else in the UI can be argued about. These cannot.
 
@@ -7,7 +11,8 @@ Everything else in the UI can be argued about. These cannot.
 
 Anything a mouse can do, the keyboard can do too: get there, use it, and get
 out again. Nothing ever traps the focus. Each control is one stop on the Tab
-key, and the arrow keys move around inside it.
+key, and the arrow keys move around inside it. Focus is always visible,
+never clipped, and stands out at 3:1 in every theme.
 
 *Why:* installations happen on virtual machines, remote consoles and with
 assistive technology. A working mouse is never a given.
@@ -34,6 +39,10 @@ they offer something that cannot happen.
 - A button that sends something waits while it is being sent.
 - A dialog's confirm button may wait for the one thing it confirms, such as a
   device picker's "Use…" until a device is picked.
+- An option in a set the user is already looking at, such as a menu or a
+  group of choices, may stay visible but unavailable *(playground)*. It keeps
+  focus and gives its reason in its own text. An option that never makes
+  sense is left out, and an action is never renamed into its own refusal.
 
 A form's submit button never waits for its fields, however short the form is.
 It stays available, and the attempt says what is missing or wrong.
@@ -57,7 +66,9 @@ disorienting for everyone, and more so for screen reader users.
 ## 5. Never lose what the user did
 
 Typed text survives switching options. A deliberate choice is never overridden
-by a default. The view survives a reload, the Back button and a shared link.
+by a default, or by a later choice about something else. Changes from the
+server never overwrite a form being edited. The view survives a reload, the
+Back button and a shared link.
 
 *Why:* redoing work the installer threw away is the fastest way to lose a
 user's trust.
@@ -88,10 +99,18 @@ reaches the user in English.
 Use what already exists, in this order: native HTML elements, the W3C
 accessibility patterns, then PatternFly. The target is WCAG 2.2, level AA.
 When PatternFly only half solves the problem, writing our own is the right
-call.
+call. A departure from a W3C pattern needs a stated reason that helps
+accessibility.
 
 *Why:* standard behavior is behavior users and assistive tools already know. A
 half-fitting component still leaves the gap.
+
+Where we look: [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), the
+[ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/),
+PatternFly's own guidelines, and the work of people and teams like the
+[GOV.UK Design System](https://design-system.service.gov.uk/),
+[Heydon Pickering](https://inclusive-components.design/) or
+[Adrian Roselli](https://adrianroselli.com/).
 
 ## 9. Every screen, every zoom
 

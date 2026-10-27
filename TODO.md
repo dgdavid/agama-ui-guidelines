@@ -66,3 +66,8 @@ Claims in the guidelines that still need checking.
 
 - The principles could also explain design choices to users, so they are
   written to go on the website unchanged.
+- Once the storage side panel lands, reword principle 3 around what it
+  protects against, something unavailable with no visible reason: "Nothing is
+  unavailable without its reason". The option exception would become the
+  rule, the waiting buttons would follow from it (their reason is the single
+  step next to them), and forms would remain the one explicit rule.
