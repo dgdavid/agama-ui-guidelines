@@ -13,7 +13,29 @@ looked up afterwards.
 | [Pages and sections](https://github.com/agama-project/agama/blob/master/web/src/components/layout/conventions.md) | Naming a section, heading levels, extending shared containers |
 | [Tests](https://github.com/agama-project/agama/blob/master/web/src/test-conventions.md) | Which render helper to use, how to mock, fake timers |
 | [Theming](https://github.com/agama-project/agama/blob/master/doc/theming.md) | The roles a product can restyle, and the ones it cannot |
+| [Theming packaging](https://github.com/agama-project/agama/blob/master/doc/theming_packaging.md) | Getting a product or brand appearance onto a medium |
 | [Web terminal](https://github.com/agama-project/agama/blob/master/doc/web-terminal.md) | Opening it, keyboard access, the session lifecycle |
+
+## Translations
+
+- **User-facing text props are typed `TranslatedString`,** so an untranslated
+  string fails the type check. Text that comes from the backend stays
+  `string`.
+- **Code uses the words the UI shows:** "installation", not "overview". A
+  URL that moves keeps a redirect for a while.
+
+## Styling
+
+- **Inline styles only for computed one-off values.** Everything else goes in
+  a stylesheet.
+- **Our own classes start with `agm-`.**
+- **`!important` only for reduced motion,** where the override has to win
+  over any animation.
+- **PatternFly is restyled through its tokens.** Overriding its classes
+  happens only in `_patternfly-overrides.scss`, as a last resort.
+- **Logical properties, not left and right,** so layouts flip for right to
+  left languages.
+- **PatternFly utility classes are imported from its style modules.**
 
 ## Components worth reading first
 
@@ -29,6 +51,14 @@ Their TSDoc is the documentation. This index only says where to look.
 | `form/DropdownField`, `form/RadioGroupField` | Choices, keyboard behavior, the footer entry |
 | `form/ArrayField`, `form/multi-select-field/MultiSelectField` | Several values in one field, and the keyboard model |
 | `form/SearchableSelectField` | Long lists with type-to-search |
+| `core/Interpolate` | Links and other markup inside a translated sentence |
+| `hooks/use-field-label` | A field's accessible name, and how to add context while keeping the visible label in it |
+| `useAnnounce` (`context/announcer`) | Telling screen readers what changed, through the global live region |
+
+## Tools
+
+- `web/scripts/check-contrast.js` computes the contrast ratio between
+  colors, for picking the values of a product's color roles.
 
 ## Adding a guideline
 

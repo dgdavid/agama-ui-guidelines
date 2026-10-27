@@ -29,6 +29,9 @@ Claims in the guidelines that still need checking.
 - [ ] "A control's accessible name starts with its visible label"
   (structure, Words): comes from notes only, look for controls whose
   `aria-label` replaces or reorders the visible text.
+- [ ] "Inline styles only for computed one-off values" and "PatternFly utility
+  classes come from its style modules" (guidelines, Styling): check the 21
+  files with inline styles, and how utility classes are used.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
   and 400% zoom, have never been tried.
 
@@ -41,6 +44,9 @@ Claims in the guidelines that still need checking.
   panel or the terminal (2.4.11), 24×24 px targets (2.5.8), pasting into the
   login password (3.3.8), no repeated entry (3.3.7). Also the dark theme's
   2.5:1 borders against the 3:1 that `doc/theming.md` asks for.
+- [ ] Write a "check before merge" page: the passes to run before merging UI
+  work, with a matrix of machine states, testing with Orca and Firefox
+  first. The storage a11y plan is a starting point.
 
 ## Changes in Agama
 
@@ -75,6 +81,8 @@ Claims in the guidelines that still need checking.
 - [ ] Improve the weak TSDoc of `TextField`, `InstallerOptionsMenu` and
   `NestedContent` when touching them.
 - [ ] Update `web/README.md`, which still mentions JSDoc and `@ts-check`.
+- [ ] Rename our own classes that don't start with `agm-` yet (`custom-`,
+  `sticky-`, `proposal-` and others, about 13 on master).
 - [ ] Remove the unused `core/RowActions`, the only row menu with vertical
   dots.
 - [ ] Make every form's errors say what is wrong with each field (structure,
@@ -88,6 +96,8 @@ Claims in the guidelines that still need checking.
   finds, among others, the iSCSI forms, the WiFi connection form, the
   software patterns form and several storage settings pages (boot,
   encryption, LVM, space policy). Make the full list first.
+- [ ] Once the ESLint `translated-prop` rule lands, mention it in the
+  Translations section of guidelines.md.
 
 ## Ideas
 
