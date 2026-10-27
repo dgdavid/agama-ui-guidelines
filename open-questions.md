@@ -47,7 +47,7 @@ answers:
 - Focus after navigation and after submit.
 - When to ask before a destructive action.
 - Small-screen behaviour in general.
-- Anatomy of the storage device sheet (in progress).
+- Anatomy of the storage device side panel (in progress).
 
 ## Follow-ups in the Agama repository
 
