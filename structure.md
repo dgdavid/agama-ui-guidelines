@@ -351,6 +351,8 @@ looking at": the page stays in use.
 - **Error messages say what is wrong with that field.** "Required" and "wrong
   format" are different messages, and a format error shows an example ("e.g.
   20 GiB"). The label, the help and the errors use the same word.
+- **A control's accessible name starts with its visible label,** so voice
+  control finds it by what the user sees.
 - **Plain words, not symbols or internals:** "at least 5 GiB", not "≥". No
   internal names ("space policy"), outcomes rather than mechanisms, and never
   "the control below".
@@ -373,6 +375,25 @@ looking at": the page stays in use.
   branding.
 - **The right theme applies from the first paint,** with no flash of the wrong
   colors.
+- **How loud something looks matches how much it matters.** Values read far
+  more often than changed are text links, not buttons. Hierarchy comes from
+  type size and weight, not from boxes. One bold element per row. Color,
+  frames and marks never repeat what the words already say.
+- **A status is text with one small mark, never a pill** *(planned)*. A tag
+  that names something, such as "Beta", "Recommended" or a file system label,
+  may be a pill. An action's icon, such as the trash can, never marks a
+  status.
+- **One status, one color,** the same in alerts, help text and icons. No
+  status color looks like a link, and when one collides with the brand color,
+  the brand changes.
+- **Contrast is AA:** 4.5:1 for text, muted and disabled text included, and
+  3:1 for icons, borders, focus rings and everything else that isn't text.
+  High contrast is PatternFly's AAA theme, and no branding overrides it.
+  *Why:* AAA in the default themes would flatten the visual hierarchy, and
+  the high contrast setting exists for users who need more.
+- **When the system asks for reduced motion, nothing moves.**
+- **Supported browsers:** Firefox, the browser on the ISO, and current
+  standard engines. No workarounds for older ones.
 
 ## Screen sizes
 

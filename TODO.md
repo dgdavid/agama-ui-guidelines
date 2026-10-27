@@ -26,6 +26,9 @@ Claims in the guidelines that still need checking.
   (structure, Feedback): check the code follows them.
 - [ ] "The header keeps the same height on every page" (structure, The
   header): check it, including the minimal layout's empty header.
+- [ ] "A control's accessible name starts with its visible label"
+  (structure, Words): comes from notes only, look for controls whose
+  `aria-label` replaces or reorders the visible text.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
   and 400% zoom, have never been tried.
 
@@ -78,6 +81,9 @@ Claims in the guidelines that still need checking.
   Words): add an example to network's format errors, and give localization
   one message per field once the string freeze ends. iSCSI's errors sit in
   one alert above the form, and get fixed with its migration below.
+- [ ] Replace the "New" pill in the storage result with text and one small
+  mark, which the new Storage page does anyway. Then drop *(planned)* from
+  the status rule (structure, Appearance).
 - [ ] Move the remaining forms to TanStack Form. A quick search on master
   finds, among others, the iSCSI forms, the WiFi connection form, the
   software patterns form and several storage settings pages (boot,

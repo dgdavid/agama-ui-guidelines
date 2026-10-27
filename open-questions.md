@@ -61,6 +61,8 @@ would freeze them too early.
   does, or in a breadcrumb menu like the ones discussed in
   [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
+- Whether "auto selected" on software patterns is a status, which would lose
+  its pill, or a tag, which may keep it.
 - Lists of names, such as the devices an action touches: name them up to a
   limit and count the rest ("sda, sdb and 3 more"), joined the way the
   user's language joins lists. The limit is not decided.
