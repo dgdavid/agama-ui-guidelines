@@ -279,8 +279,20 @@ looking at": the page stays in use.
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
 
-## Focus
+## Keyboard and focus
 
+- **In a dropdown, the arrow keys explore and Enter or Space commits.**
+  Escape leaves the value unchanged.
+  *Why:* a choice often shows or hides other fields, so it should happen only
+  when the user means it.
+- **Typing in a combobox filters, but never picks a match on its own:** "eth"
+  never silently becomes "eth0".
+- **A field holding several values is still one Tab stop.** The arrow keys
+  reach the values.
+- **Enter and Space toggle an expandable section;** the arrow keys never do.
+- **A widget that takes every key has a stop in front of it,** with a key to
+  go in and another to come out, both said on screen. The terminal is one.
+- **Enter in a dialog's field submits the dialog.**
 - **Changing the view of a page never moves focus:** a filter, the sort
   order, a tab.
 - **Moving through a list never moves focus into the side panel**

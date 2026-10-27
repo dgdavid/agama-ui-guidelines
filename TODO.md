@@ -18,6 +18,9 @@ Claims in the guidelines that still need checking.
 - [ ] "'Automatic' says what it will be and why" and "Switching mode clears
   the errors of the mode left behind" (structure, Forms): both come from
   notes only, check the forms follow them.
+- [ ] "Typing in a combobox never picks a match on its own", "Enter and Space
+  toggle an expandable section" and "Enter in a dialog's field submits the
+  dialog" (structure, Keyboard and focus): check the code follows them.
 - [ ] "The header keeps the same height on every page" (structure, The
   header): check it, including the minimal layout's empty header.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
