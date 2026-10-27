@@ -43,6 +43,8 @@ would freeze them too early.
   let the alert announce itself.
 - Back and Cancel returning to where the user left the page, while a link or
   a reload opens it at the top.
+- Every action that can fail saying so when it does. Some failed actions only
+  write to the browser console today.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Dialogs that can be maximized, or that get an address of their own when it

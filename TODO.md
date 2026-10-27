@@ -21,6 +21,9 @@ Claims in the guidelines that still need checking.
 - [ ] "Typing in a combobox never picks a match on its own", "Enter and Space
   toggle an expandable section" and "Enter in a dialog's field submits the
   dialog" (structure, Keyboard and focus): check the code follows them.
+- [ ] "A form that stays open after saving tells 'saved' apart from 'nothing
+  changed'" and "Recomputing part of a form keeps the old content on screen"
+  (structure, Feedback): check the code follows them.
 - [ ] "The header keeps the same height on every page" (structure, The
   header): check it, including the minimal layout's empty header.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,

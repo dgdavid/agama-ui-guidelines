@@ -288,9 +288,22 @@ looking at": the page stays in use.
 - **Progress shows the step and the total.** No made-up percentages.
 - **A long side action,** such as downloading logs, gets a toast when it starts
   and another when it finishes.
+- **A form that stays open after saving says so,** telling "saved" apart from
+  "nothing changed". The message goes away on the next edit.
+- **Recomputing part of a form keeps the old content on screen.** Any loading
+  stays inside that part.
+- **When a choice can't apply to an item, the item says so** *(playground)*:
+  "cannot be shrunk", not "keep", with the first reason underneath.
+- **Say which kind of empty:** nothing planned, not used, or could not be
+  worked out. The big empty-state layout is only for screens that are truly
+  empty. A section with nothing in it gets one plain line.
+- **Standing information is not an alert.** It gets a quiet treatment, and an
+  ordinary result has no alert heading and no announcement.
 - **One place makes announcements for screen readers.** It keeps working while
-  a dialog is open. A permanent hint belongs on its control, not in an
-  announcement.
+  a dialog is open. Announcements are polite, and assertive only when missing
+  one would lose data. A new one replaces a pending one, and noisy sources
+  wait until they settle. A summary that is recalculated often is never
+  announced, and a hint that changes is linked to its field instead.
 - **A dead end always offers a way out.** An empty page says why it is empty
   and what to do: "Go to network settings", "Try again".
 - **Partly bad settings keep their good parts:** the user sees "Invalid
