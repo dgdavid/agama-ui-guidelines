@@ -59,5 +59,7 @@ The structure page marks these as *to be agreed* rather than inventing
 answers:
 
 - Button order inside forms and dialogs.
-- Anatomy of the storage device side panel (in progress).
+- The anatomy of a side panel. It is being worked out for storage, and once
+  settled it may become the shape of side panels in other areas, such as
+  network, wherever one helps with complexity.
 

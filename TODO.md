@@ -45,6 +45,9 @@ Claims in the guidelines that still need checking.
   dialogs), and from the side panel holding details only.
 - [ ] Once the new Storage page lands on master, drop *(planned)* from the
   side panel row in the table of Pages, side panels and dialogs.
+- [ ] Once the storage side panel is settled, document its anatomy in its
+  TSDoc. When a second area adopts a side panel, move the shared anatomy to
+  the structure page.
 - [ ] Once `core/Sheet` lands on master, add it to the components in
   guidelines.md as the side panel.
 - [ ] `form/conventions.md` is 2469 lines. Once the structure page holds the
