@@ -46,7 +46,7 @@ Claims in the guidelines that still need checking.
   2.5:1 borders against the 3:1 that `doc/theming.md` asks for.
 - [ ] Write a "check before merge" page: the passes to run before merging UI
   work, with a matrix of machine states, testing with Orca and Firefox
-  first. The storage a11y plan is a starting point.
+  first. My notes on checking the storage page are a starting point.
 
 ## Changes in Agama
 
