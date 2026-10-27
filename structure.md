@@ -188,6 +188,14 @@ looking at": the page stays in use.
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
 
+## Focus
+
+- **Changing the view of a page never moves focus:** a filter, the sort
+  order, a tab.
+- **Moving through a list never moves focus into the side panel**
+  *(playground)*. Going in takes a deliberate step.
+- **A failed submit brings its alert into view,** not the top of the page.
+
 ## Words
 
 - **Short labels when the context already says the rest:** "Name", not

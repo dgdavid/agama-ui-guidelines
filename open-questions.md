@@ -36,6 +36,13 @@ would freeze them too early.
   landmarks or a shortcut.
 - A side panel that covers the page without blocking it, with careful focus
   handling instead of a backdrop.
+- Moving focus to the content of a page after going to it, and whether it
+  lands on the heading or on the main content. Needs a screen reader to
+  decide.
+- Where focus goes after a failed submit. One attempt kept it in place and
+  let the alert announce itself.
+- Back and Cancel returning to where the user left the page, while a link or
+  a reload opens it at the top.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Dialogs that can be maximized, or that get an address of their own when it
@@ -52,7 +59,6 @@ The structure page marks these as *to be agreed* rather than inventing
 answers:
 
 - Button order inside forms and dialogs.
-- Focus after navigation and after submit.
 - When to ask before a destructive action.
 - Anatomy of the storage device side panel (in progress).
 
