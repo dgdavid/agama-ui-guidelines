@@ -148,7 +148,7 @@ title and a sentence on one side, the one thing to do on the other.
   is lost ("including Windows 11") rather than asking afterwards.
 - **Destructive actions on an item come last in its menu,** after a
   separator, in the danger style.
-- **Undoing a plan for something that stays is not destructive**
+- **Undoing a plan is not destructive when the item itself stays**
   *(playground)*: "Stop reusing" is plain, not a red "Delete".
 - **Managing the machine is not configuring it.** Tools that act on the
   machine, such as rescanning devices or connecting iSCSI, zFCP and DASD, sit
@@ -195,15 +195,15 @@ The rest of this section is about forms.
 - **Short facts go in place, not behind an info icon.** A tooltip on static
   text can't be reached with the keyboard. If an explanation needs a popover,
   its trigger is a real button.
-- **Values the installer fills in step aside once the user types.** It never
+- **Values the installer fills in give way once the user types.** It never
   overwrites the user's own text.
 - **No field waits, disabled, for another one.** Every field stays usable,
   and the dependency is checked on submit.
 - **Dependent fields react once the user has finished typing,** on leaving
   the field or picking a suggestion, not on every keystroke.
-- **A later change never swaps in a different value.** When it makes an
-  earlier choice impossible, the field falls back to automatic, and a choice
-  to keep what exists comes back once it is possible again.
+- **A later change never picks a different value for the user.** If it makes
+  an earlier choice impossible, the field goes back to automatic. The option
+  to keep what already exists comes back once it is possible again.
 - **"Automatic" says what it will be and why.** The first sentence is the
   result ("XFS will be used for /home"), the second what decided it.
 - **Inherited values say where they come from** *(playground)*: "LUKS2 · from
@@ -231,7 +231,7 @@ Pick the control by the choice it offers:
 | One of two or three weighty options | Radios, each with its consequence on one line |
 
 How visible a field should be depends on how many people need it. Pick the
-first rung that fits:
+first level that fits:
 
 1. **Always shown.** Most people need it.
 2. **Revealed by a choice the user makes** ("Static IP" reveals the address
@@ -273,7 +273,7 @@ looking at": the page stays in use.
   *Why:* with no step at all, Back on a panel that covers the page leaves the
   page by surprise; with a step for every item, leaving the page takes as many
   Backs as items were looked at.
-- **What changes the whole stays in view** *(planned)*. An alert about the
+- **Alerts about the whole page stay in view** *(planned)*. An alert about the
   whole page is one line, with an action that opens its full content in a
   dialog, and the side panel opens below it. A change made in the panel shows
   up in the alert at once.
@@ -337,13 +337,13 @@ looking at": the page stays in use.
 - **Say which kind of empty:** nothing planned, not used, or could not be
   worked out. The big empty-state layout is only for screens that are truly
   empty. A section with nothing in it gets one plain line.
-- **Standing information is not an alert.** It gets a quiet treatment, and an
-  ordinary result has no alert heading and no announcement.
+- **Information that is always there is not an alert.** It is shown quietly,
+  and an ordinary result has no alert heading and no announcement.
 - **One place makes announcements for screen readers.** It keeps working while
   a dialog is open. Announcements are polite, and assertive only when missing
-  one would lose data. A new one replaces a pending one, and noisy sources
-  wait until they settle. A summary that is recalculated often is never
-  announced, and a hint that changes is linked to its field instead.
+  one would lose data. A new one replaces a pending one, and sources that
+  change often wait until they stop. A summary that is recalculated often is
+  never announced, and a hint that changes is linked to its field instead.
 - **A dead end always offers a way out.** An empty page says why it is empty
   and what to do: "Go to network settings", "Try again".
 - **Partly bad settings keep their good parts:** the user sees "Invalid
@@ -479,7 +479,7 @@ looking at": the page stays in use.
 
 **A new setting in an existing area**
 
-1. Pick its visibility rung, from the four in Forms above.
+1. Pick how visible it is, from the four levels in Forms above.
 2. Add it to the area's form. Mark it optional if it is.
 3. Check it on submit, with an error the user can act on.
 4. Update the area's line on the summary if the setting changes it.

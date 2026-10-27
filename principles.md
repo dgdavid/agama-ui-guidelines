@@ -69,7 +69,8 @@ they offer something that cannot happen.
 - An option in a set the user is already looking at, such as a menu or a
   group of choices, may stay visible but unavailable *(playground)*. It keeps
   focus and gives its reason in its own text. An option that never makes
-  sense is left out, and an action is never renamed into its own refusal.
+  sense is left out, and an action is never relabeled to say it can't be
+  done: "Delete" never becomes "Can't delete".
 
 A form's submit button never waits for its fields, however short the form is.
 It stays available, and the attempt says what is missing or wrong.
@@ -81,9 +82,9 @@ has to guess which kind of button they are looking at.
 ## 4. Don't get in the way
 
 - No errors while typing: input is checked when the user submits.
-- The user always knows when a choice takes effect: a form on submit, a page
-  that applies each choice at once by showing its result right away. Nothing
-  touches the system until the installation starts.
+- The user always knows when a choice takes effect: in a form, on submit;
+  anywhere else, at once, with its result shown right away. Nothing touches
+  the system until the installation starts.
 - Focus never moves behind the user's back.
 - Nothing covers the screen longer than the work it waits for.
 
