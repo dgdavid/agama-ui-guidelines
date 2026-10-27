@@ -22,10 +22,20 @@ would freeze them too early.
 - Settings applied at once could show the chosen value right away, before the
   result arrives. Storage waits under the progress overlay today, and shows
   the value once the result is back.
+- Rechecking a form's errors as the user fixes them, once a submit has
+  failed. Wanted, as long as the form library makes it possible.
+- Asking before leaving a form with unsaved changes by any way other than
+  Cancel: another link, a changed URL, closing the tab. Wanted, and React
+  Router's navigation blocking may make it possible. Changing the view of the
+  same page, such as a filter or the sort order, must never ask.
+- Whether every control that opens a dialog should be announced as opening
+  one. Only the header's language and keyboard buttons are today.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Whether the summary should reopen the last storage view.
 - Whether the error page stays on the minimal layout.
+- Keeping language and keyboard reachable on the login page, whose header is
+  empty: a password typed with the wrong keyboard layout fails.
 - Collapsible software categories: prototyped and parked.
 
 ## Not settled anywhere yet
@@ -37,7 +47,6 @@ answers:
 - Focus after navigation and after submit.
 - When to ask before a destructive action.
 - Small-screen behaviour in general.
-- A stated WCAG target.
 - Anatomy of the storage device sheet (in progress).
 
 ## Follow-ups in the Agama repository
@@ -45,9 +54,9 @@ answers:
 - `form/conventions.md` is 2469 lines. Once the structure page holds the field
   patterns in plain words, it can shrink to its technical decisions and move
   under `doc/ui/guidelines/`.
-- Page and Popup TSDoc carry structure decisions (Back vs Cancel, dismissible
-  vs must-answer dialogs). The structure page now states them, and the TSDoc
-  can link there instead.
+- Popup TSDoc carries a structure decision (dismissible vs must-answer
+  dialogs). The structure page now states it, and the TSDoc can link there
+  instead.
 - The principles could explain design choices to users too, so they are
   written to go on the website unchanged.
 - The "still living next to their code" table in `doc/ui/guidelines.md` merges

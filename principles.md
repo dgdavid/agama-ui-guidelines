@@ -86,8 +86,9 @@ reaches the user in English.
 ## 8. Standards first, our own code when they fall short
 
 Use what already exists, in this order: native HTML elements, the W3C
-accessibility patterns, then PatternFly. Contrast meets WCAG AA. When
-PatternFly only half solves the problem, writing our own is the right call.
+accessibility patterns, then PatternFly. The target is WCAG 2.2, level AA.
+When PatternFly only half solves the problem, writing our own is the right
+call.
 
 *Why:* standard behavior is behavior users and assistive tools already know. A
 half-fitting component still leaves the gap.

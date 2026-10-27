@@ -31,10 +31,11 @@ Installation (summary, at /)
 - **The left side says where you are.** The product shows what is being
   installed, and the breadcrumb shows the path. Its last item is the page
   title.
-- **The right side has the same tools on every page:**
+- **The right side has the same tools on every page of the standard layout:**
   - language and keyboard, because they are needed anywhere, a password page
     included;
-  - the progress monitor, always present so it is easy to find;
+  - the progress monitor, always present so it is easy to find, except on the
+    pages that show the progress themselves;
   - appearance;
   - "More options": show the configuration, download logs, terminal, change
     product.
@@ -47,8 +48,8 @@ Installation (summary, at /)
 
 | Layout | For | Examples |
 | --- | --- | --- |
-| Standard | Everything inside the installation flow | Summary, every area, edit pages |
-| Minimal | Pages that stand alone, with nothing to navigate to | Login, progress, finished, failed, errors |
+| Standard | Everything inside the installation flow | Summary, every area, edit pages, progress, finished |
+| Minimal | Pages that stand alone, with nothing to navigate to and an empty header | Login, failed, errors |
 
 Pages that stand alone usually lay out their content side by side: an icon, a
 title and a sentence on one side, the one thing to do on the other.
@@ -68,9 +69,8 @@ title and a sentence on one side, the one thing to do on the other.
 | One item in a list | In that row's menu | Edit, Delete |
 | Nothing on this page, or rarely needed | "More options" in the header | Download logs |
 
-- **Cancel goes back.** Leaving a form with unsaved changes asks first;
-  changing the view of the same page never does. *When to confirm other
-  destructive actions is still to be agreed.*
+- **Cancel goes back, and never asks:** it already means "discard". *When to
+  confirm destructive actions is still to be agreed.*
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
 
@@ -92,8 +92,8 @@ The rest of this section is about forms.
 
 - **A form has one submit.** Its settings never save themselves one checkbox
   at a time.
-- **Checked on submit.** After the first attempt, errors update as the user
-  fixes them. Errors from the server show at the top of the form.
+- **Checked on submit.** Errors are checked again on the next submit. Errors
+  from the server show at the top of the form.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
   required.
 - **A value the user can't change is shown as plain text.** A field that can't
@@ -128,8 +128,7 @@ first rung that fits:
   enp1s0", not "OK".
 - **Nothing is applied until confirmed.**
 - **Show before acting:** the configuration is shown before it is downloaded.
-- **A menu entry that opens a dialog ends in "…"**, and is announced as
-  opening one.
+- **A menu entry that opens a dialog ends in "…".**
 
 ## Tables and lists
 
