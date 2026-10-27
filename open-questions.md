@@ -50,7 +50,14 @@ would freeze them too early.
 - Whether the summary should reopen the last storage view.
 - Whether the error page stays on the minimal layout.
 - Keeping language and keyboard reachable on the login page, whose header is
-  empty: a password typed with the wrong keyboard layout fails.
+  empty, and while a question dialog is open, such as a password question: a
+  password typed with the wrong keyboard layout fails.
+- An h1 inside the breadcrumb's navigation landmark, since the page title is
+  the breadcrumb's last item.
+- Where an area's own tools go, such as storage's device connections (iSCSI,
+  zFCP, DASD): in a menu on the right side of the header, as the new Storage
+  page does, or in a breadcrumb menu like the ones discussed in
+  [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
 
 ## Not settled anywhere yet

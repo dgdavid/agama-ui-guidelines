@@ -15,6 +15,15 @@ Installation (summary, at /)
 - **The summary is the hub.** Every area is one line on it, and that line
   shows the real choice ("GNOME", "No desktop selected"), not a generic
   "Configured".
+- **A summary line goes through fixed states:** a placeholder while loading,
+  then the problem if there is one, then the actual choice. A hint such as
+  "No desktop selected" shows only when the product asks for that choice. A
+  line is never empty.
+- **Status claims only what it knows.** The progress monitor reports
+  background tasks only. When idle it says "No pending tasks", in a neutral
+  color, never "Ready".
+  *Why:* a green "Ready" would mislead while problems still block the
+  installation.
 - **Problems show up where they live:** on the summary, and in the area that
   has them. They don't follow the user onto every other page.
 - **Installing is a deliberate step.** The confirmation screen covers the whole
@@ -31,6 +40,17 @@ Installation (summary, at /)
 - **The left side says where you are.** The product shows what is being
   installed, and the breadcrumb shows the path. Its last item is the page
   title.
+
+  > [!NOTE]
+  > Menus in the breadcrumb, to jump between areas without going back to the
+  > summary every time, are being discussed in
+  > [#3913](https://github.com/agama-project/agama/issues/3913).
+
+- **The product keeps its full name,** never shortened, and the header keeps
+  the same height on every page.
+  *Why:* a short name can clash with the trademark, and a header that changes
+  height makes the page jump.
+- **A new interface language applies at once,** without reloading the page.
 - **The right side has the same tools on every page of the standard layout:**
   - language and keyboard, because they are needed anywhere, a password page
     included;
