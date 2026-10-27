@@ -149,12 +149,49 @@ The rest of this section is about forms.
   from the server show at the top of the form.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
   required.
-- **A value the user can't change is shown as plain text.** A field that can't
-  be edited isn't rendered at all.
-- **Help sits under the field, in a few words.** Never only in a tooltip, and
-  no examples that repeat the default value.
+- **A value the user can't change is shown as plain text,** with the reason
+  when circumstances leave only one answer ("New partition (all partitions on
+  /dev/vdd are already assigned)"). When there could never be a choice, the
+  field isn't rendered at all.
+- **Help sits under the field, in a few words.** No examples that repeat the
+  default value.
+- **Short facts go in place, not behind an info icon.** A tooltip on static
+  text can't be reached with the keyboard. If an explanation needs a popover,
+  its trigger is a real button.
 - **Values the installer fills in step aside once the user types.** It never
   overwrites the user's own text.
+- **No field waits, disabled, for another one.** Every field stays usable,
+  and the dependency is checked on submit.
+- **Dependent fields react once the user has finished typing,** on leaving
+  the field or picking a suggestion, not on every keystroke.
+- **A later change never swaps in a different value.** When it makes an
+  earlier choice impossible, the field falls back to automatic, and a choice
+  to keep what exists comes back once it is possible again.
+- **"Automatic" says what it will be and why.** The first sentence is the
+  result ("XFS will be used for /home"), the second what decided it.
+- **Inherited values say where they come from** *(playground)*: "LUKS2 · from
+  the installation settings". The way back is named after the scope: "Use the
+  installation setting".
+- **Switching mode clears the errors of the mode left behind.**
+- **No two controls share an accessible name.** A generic visible label
+  ("Mode") gets its group's name in its accessible name ("Hostname mode").
+  *Why:* screen readers and voice control can't tell identical names apart.
+- **A placeholder is never the only instruction,** and doesn't repeat the
+  label or the help.
+- **Known values are offered,** not listed in help text for the user to
+  retype.
+- **One field per line.** One list of settings is never split into two
+  columns.
+
+Pick the control by the choice it offers:
+
+| The choice | Control |
+| --- | --- |
+| One of a short fixed list, up to about a dozen | Dropdown |
+| One of hundreds | Searchable select |
+| Several free values | Multi-value text field |
+| Several from a known list | Multi-select |
+| One of two or three weighty options | Radios, each with its consequence on one line |
 
 How visible a field should be depends on how many people need it. Pick the
 first rung that fits:
@@ -163,6 +200,8 @@ first rung that fits:
 2. **Revealed by a choice the user makes** ("Static IP" reveals the address
    fields). Prefer a choice of mode over a "Configure X" checkbox.
 3. **Revealed by an opt-in checkbox.** For options most people never touch.
+   An optional field that many people fill stays visible instead, marked
+   "(optional)".
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
 

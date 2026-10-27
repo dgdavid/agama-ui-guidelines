@@ -15,6 +15,9 @@ Claims in the guidelines that still need checking.
   panels and dialogs): check the menus follow it.
 - [ ] "Toolbars wrap instead of scrolling sideways, tables stay tables": check
   before adding it to Screen sizes.
+- [ ] "'Automatic' says what it will be and why" and "Switching mode clears
+  the errors of the mode left behind" (structure, Forms): both come from
+  notes only, check the forms follow them.
 - [ ] "The header keeps the same height on every page" (structure, The
   header): check it, including the minimal layout's empty header.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
