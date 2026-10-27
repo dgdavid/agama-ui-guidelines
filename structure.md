@@ -257,11 +257,29 @@ looking at": the page stays in use.
 
 - **Rows highlight on hover and on keyboard focus**, but they don't pretend to
   be links.
+- **In a list with a side panel, a row opens it through a real link on the
+  item's name** *(playground)*, stretched over the row, never through a click
+  handler on the row. The row's menu keeps its own Tab stop, and the open
+  item is marked as current. Lists without a side panel have no row link.
 - **A selection inside a table is one Tab stop.** The arrow keys move within
   it.
-- **Cut-off names stay complete for screen readers and on hover.**
+- **Long names are cut in the middle,** and stay complete for screen readers
+  and on hover, with no extra Tab stop. A sighted keyboard user can't see the
+  full name: an accepted gap.
+- **Columns earn their place.** A column that says the same on every row, or
+  is mostly empty, goes. Headers stay in the markup even when not shown, and
+  every table has a name.
+- **Search matches what people type:** it ignores accents and case, matches
+  hidden terms such as codes or the UTC offset, and accepts words in any
+  order.
+- **No search box on a short list.**
+- **Filtering keeps the layout still.** Groups stay in place, and an empty one
+  says "No patterns match the filter". The result count is shown and announced
+  politely. Selection counters include selected items the filter hides.
 - **Sort order, filters and searches live in the address bar,** so a reload or
-  a shared link lands on the same view.
+  a shared link lands on the same view. Tables inside dialogs keep them to
+  themselves, the layout never goes in the address, and typing in a filter
+  doesn't add a history step per key.
 
 ## Feedback
 
