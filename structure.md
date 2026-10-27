@@ -114,27 +114,53 @@ first rung that fits:
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
 
-## Dialogs or pages
+## Pages, side panels and dialogs
+
+Pick by the interaction, not by the look. A dialog says "stop and deal with
+me": it blocks the page. A side panel says "here is more about what you are
+looking at": the page stays in use.
 
 | Need | Use |
 | --- | --- |
-| Changing settings | A page with a form |
-| Browsing details or picking an item | A dialog over the page |
+| Settings with Accept and Cancel | A page with a form |
+| Details of one item in a list, with its settings applied at once | A side panel *(planned)* |
+| Picking from a list too detailed for a dropdown | A dialog, opened from a plain selector |
+| A view of the whole, such as the storage result | A dialog *(planned)* |
 | A question the installer must get answered | A dialog without a close button |
 
-- **A dialog the user can walk away from** has a close button and closes with
-  Escape.
-- **Every dialog has a name.** Its confirm button says what it does: "Use
-  enp1s0", not "OK".
-- **Nothing is applied until confirmed.**
-- **Show before acting:** the configuration is shown before it is downloaded.
-- **A menu entry that opens a dialog ends in "…".**
+- **Opening a dialog or a side panel moves focus into it,** onto the current
+  choice if there is one. Closing it returns focus to the control that opened
+  it.
+
+### Side panels
+
+- **A side panel holds details, nothing else** *(planned)*. It may hold
+  settings applied at once and links to other pages, but never a form with
+  Accept and Cancel, and never alerts or a view of the whole.
+  *Why:* each earlier panel that held something else, a form or the
+  installation issues, had to be dropped.
 - **A side panel lives in the address** *(planned)*. Opening it adds one step
   to the history, and moving to another item while it is open does not. Back
   closes it; the next Back leaves the page.
   *Why:* with no step at all, Back on a panel that covers the page leaves the
   page by surprise; with a step for every item, leaving the page takes as many
   Backs as items were looked at.
+- **What changes the whole stays in view** *(planned)*. An alert about the
+  whole page is one line, with an action that opens its full content in a
+  dialog, and the side panel opens below it. A change made in the panel shows
+  up in the alert at once.
+
+### Dialogs
+
+- **A dialog the user can walk away from** has a close button and closes with
+  Escape.
+- **Every dialog has a name.** Its confirm button says what it does: "Use
+  enp1s0", not "OK".
+- **A dialog always opens with the current values.** What was left
+  unconfirmed last time is gone.
+- **Nothing is applied until confirmed.**
+- **Show before acting:** the configuration is shown before it is downloaded.
+- **A menu entry that opens a dialog ends in "…".**
 
 ## Tables and lists
 
@@ -231,7 +257,8 @@ first rung that fits:
 
 **A new dialog**
 
-1. Make sure it shouldn't be a page instead: settings go on pages.
+1. Make sure it shouldn't be a page or a side panel instead: settings with
+   Accept and Cancel go on a page, details of an item in a side panel.
 2. Decide whether the user may walk away. If yes, add a close button and
    Escape.
 3. Give it a name and a confirm button that says what it does.

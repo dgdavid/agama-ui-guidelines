@@ -11,8 +11,8 @@ Claims in the guidelines that still need checking.
   a switch today.
 - [ ] "Reset to defaults" in the section's menu (structure, Where actions go):
   check it still sits there on the new Storage page.
-- [ ] "A menu entry that opens a dialog ends in '…'" (structure, Dialogs or
-  pages): check the menus follow it.
+- [ ] "A menu entry that opens a dialog ends in '…'" (structure, Pages, side
+  panels and dialogs): check the menus follow it.
 - [ ] "Toolbars wrap instead of scrolling sideways, tables stay tables": check
   before adding it to Screen sizes.
 - [ ] Run the screen size checks (structure, Screen sizes): 375 and 768 wide,
@@ -39,7 +39,12 @@ Claims in the guidelines that still need checking.
   explains the replace. Then drop *(planned)* from the side panel rule.
 - [ ] On the `storage-result-popup` branch (in progress): the side panel
   covers the page on narrow windows, with a backdrop and the page underneath
-  out of reach. Then drop *(planned)* from that rule in Screen sizes.
+  out of reach; the storage result moves to a dialog opened from a one-line
+  alert, and the side panel opens below that alert. Then drop *(planned)*
+  from those rules (structure, Screen sizes and Pages, side panels and
+  dialogs), and from the side panel holding details only.
+- [ ] Once the new Storage page lands on master, drop *(planned)* from the
+  side panel row in the table of Pages, side panels and dialogs.
 - [ ] Once `core/Sheet` lands on master, add it to the components in
   guidelines.md as the side panel.
 - [ ] `form/conventions.md` is 2469 lines. Once the structure page holds the

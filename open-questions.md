@@ -38,6 +38,8 @@ would freeze them too early.
   handling instead of a backdrop.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
+- Dialogs that can be maximized, or that get an address of their own when it
+  makes sense.
 - Whether the summary should reopen the last storage view.
 - Whether the error page stays on the minimal layout.
 - Keeping language and keyboard reachable on the login page, whose header is
