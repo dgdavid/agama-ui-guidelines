@@ -8,10 +8,11 @@ It is not the final text. It tests two things:
 
 - whether the three levels proposed in the issue (principles, structure and
   technical) work as a format, and
-- whether the rules written in them are the right ones.
+- whether the rules written in them are a good starting point to shape the
+  final ones together.
 
-If both hold, the pages move to `doc/ui/` in the Agama repository with few
-changes.
+If both hold, the team shapes the rules from here, and the pages move to
+`doc/ui/` in the Agama repository.
 
 ## What is in it
 
