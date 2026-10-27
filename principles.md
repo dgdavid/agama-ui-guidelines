@@ -1,6 +1,6 @@
 # UI principles
 
-Eight rules. When a design choice runs into one of them, the rule wins.
+Nine rules. When a design choice runs into one of them, the rule wins.
 Everything else in the UI can be argued about. These cannot.
 
 ## 1. The keyboard reaches everything
@@ -92,3 +92,12 @@ call.
 
 *Why:* standard behavior is behavior users and assistive tools already know. A
 half-fitting component still leaves the gap.
+
+## 9. Every screen, every zoom
+
+Agama works on whatever screen it gets, from a phone to a wide monitor, zoomed
+in or out. Responsive goes both ways: a small screen gets a layout that fits,
+and a large one gets its space put to use.
+
+*Why:* the installer can be driven from a virtual machine window, a laptop, a
+tablet or a phone, and zoom changes the width a layout gets on any of them.

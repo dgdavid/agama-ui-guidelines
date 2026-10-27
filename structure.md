@@ -182,6 +182,30 @@ first rung that fits:
 - **The right theme applies from the first paint,** with no flash of the wrong
   colors.
 
+## Screen sizes
+
+- **Every screen works from a phone to a wide monitor.** Check it at 375 wide
+  (a phone), 768 (a tablet), 1024 (the usual virtual machine), 1440, 1920 and
+  2560, and at 200% and 400% zoom.
+- **The app as a whole has no maximum width.** What gets hard to read is
+  limited on its own: text around 65 to 75 characters wide, a narrow form on
+  a fluid page.
+  *Why:* zoom changes the width a layout gets, so a cap only avoids large
+  screens instead of adapting to them.
+- **Wide screens are put to use** *(playground)*: a side panel next to its
+  list, sections side by side, where it helps.
+- **A side panel covers the page on narrow windows** *(planned)*, with a
+  backdrop and the page underneath out of reach. On wide windows it sits next
+  to the list, with neither.
+- **A side panel belongs to a page, a dock to the whole window.** A dock takes
+  height, not width: the terminal docks at the bottom.
+  *Why:* the header and the page are laid out by window width, so a dock
+  beside them would push them out of sight.
+- **Side-by-side screens become one column** on narrow windows, in reading
+  order.
+- **A feature that cannot fit says so** instead of squeezing in: the terminal
+  says it is unavailable below 1024×768.
+
 ## Terminal
 
 - **It docks at the bottom of the window, splitting the screen.** It is not a

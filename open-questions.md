@@ -30,6 +30,12 @@ would freeze them too early.
   same page, such as a filter or the sort order, must never ask.
 - Whether every control that opens a dialog should be announced as opening
   one. Only the header's language and keyboard buttons are today.
+- The width at which the side panel stops covering the page and sits next to
+  the list.
+- A way to jump between the list and the side panel on wide screens, such as
+  landmarks or a shortcut.
+- A side panel that covers the page without blocking it, with careful focus
+  handling instead of a backdrop.
 - A link styled as a button when it sits next to a real button.
 - The default dialog width.
 - Whether the summary should reopen the last storage view.
@@ -46,7 +52,6 @@ answers:
 - Button order inside forms and dialogs.
 - Focus after navigation and after submit.
 - When to ask before a destructive action.
-- Small-screen behaviour in general.
 - Anatomy of the storage device side panel (in progress).
 
 ## Follow-ups in the Agama repository
