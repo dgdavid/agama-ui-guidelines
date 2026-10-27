@@ -94,8 +94,9 @@ Installation (summary, at /)
   A page may put its own tools first, such as storage's device connections.
 - **There is no call to action in the header.** An "Install" button there
   would duplicate the summary and start endless debates about its label.
-- **Icons with tooltips save room.** The tooltip is for the eyes: the control
-  already has its accessible name.
+- **Icons with tooltips save room.** The tooltip shows on hover and on
+  keyboard focus, and Escape hides it. Its words are the control's accessible
+  name, so a screen reader doesn't hear them twice.
 
 ## Pages
 
@@ -122,6 +123,10 @@ title and a sentence on one side, the one thing to do on the other.
   back. A page that has to send the user elsewhere uses a link named after
   where it goes.
 - **The reading order is the screen order.** Layouts also work right to left.
+- **The browser tab names the page** *(planned)*: "Storage · Agama", not
+  "Agama" everywhere.
+  *Why:* the tab title is the first thing a screen reader says after moving
+  to a page, and how anyone finds the tab among others.
 
 ## Where actions go
 
@@ -184,8 +189,9 @@ The rest of this section is about forms.
   when circumstances leave only one answer ("New partition (all partitions on
   /dev/vdd are already assigned)"). When there could never be a choice, the
   field isn't rendered at all.
-- **Help sits under the field, in a few words.** No examples that repeat the
-  default value.
+- **Help sits under the field, in a few words,** and is tied to it, so a
+  screen reader reads it with the field. No examples that repeat the default
+  value.
 - **Short facts go in place, not behind an info icon.** A tooltip on static
   text can't be reached with the keyboard. If an explanation needs a popover,
   its trigger is a real button.
@@ -252,7 +258,7 @@ looking at": the page stays in use.
 
 - **Opening a dialog or a side panel moves focus into it,** onto the current
   choice if there is one. Closing it returns focus to the control that opened
-  it.
+  it, or to the nearest sensible place when that control is gone.
 
 ### Side panels
 
@@ -275,7 +281,8 @@ looking at": the page stays in use.
 ### Dialogs
 
 - **A dialog the user can walk away from** has a close button and closes with
-  Escape.
+  Escape. A question the installer must get answered is an alert dialog
+  *(planned)*, so screen readers say it is urgent.
 - **Every dialog has a name.** Its confirm button says what it does: "Use
   enp1s0", not "OK".
 - **A dialog always opens with the current values.** What was left
@@ -318,7 +325,9 @@ looking at": the page stays in use.
   only the page that is waiting, and only until that work is done.
 - **Progress shows the step and the total.** No made-up percentages.
 - **A long side action,** such as downloading logs, gets a toast when it starts
-  and another when it finishes.
+  and another when it finishes. A toast is announced, and since it goes away
+  on its own, it never holds the only copy of an error or the only way to do
+  something.
 - **A form that stays open after saving says so,** telling "saved" apart from
   "nothing changed". The message goes away on the next edit.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
@@ -380,9 +389,10 @@ looking at": the page stays in use.
   it adds noise, shows one action twice, can drift out of sync, or makes a
   screen reader say the same thing twice. No intro paragraph restates the
   table below it.
-- **Error messages say what is wrong with that field.** "Required" and "wrong
-  format" are different messages, and a format error shows an example ("e.g.
-  20 GiB"). The label, the help and the errors use the same word.
+- **Error messages say what is wrong with that field,** next to it, and are
+  tied to it so a screen reader reads them with the field. "Required" and
+  "wrong format" are different messages, and a format error shows an example
+  ("e.g. 20 GiB"). The label, the help and the errors use the same word.
 - **A control's accessible name includes its visible label, word for word,**
   so voice control finds it by what the user sees. Added context, such as
   "Hostname" in "Hostname mode", goes around the label, never in place of
@@ -432,9 +442,10 @@ looking at": the page stays in use.
 
 ## Screen sizes
 
-- **Every screen works from a phone to a wide monitor.** Check it at 375 wide
-  (a phone), 768 (a tablet), 1024 (the usual virtual machine), 1440, 1920 and
-  2560, and at 200% and 400% zoom.
+- **Every screen works from a phone to a wide monitor.** Check it at 320 wide
+  (the narrowest WCAG asks for), 375 (a phone), 768 (a tablet), 1024 (the
+  usual virtual machine), 1440, 1920 and 2560, at 200% and 400% zoom, and
+  with the phone or tablet held both ways.
 - **The app as a whole has no maximum width.** What gets hard to read is
   limited on its own: text around 65 to 75 characters wide, a narrow form on
   a fluid page.
@@ -443,8 +454,9 @@ looking at": the page stays in use.
 - **Wide screens are put to use** *(playground)*: a side panel next to its
   list, sections side by side, where it helps.
 - **A side panel covers the page on narrow windows** *(planned)*, with a
-  backdrop and the page underneath out of reach. On wide windows it sits next
-  to the list, with neither.
+  backdrop and the page underneath out of reach. It then behaves as a dialog:
+  focus stays inside, and Escape closes it. On wide windows it sits next to
+  the list, with none of that.
 - **A side panel belongs to a page, a dock to the whole window.** A dock takes
   height, not width: the terminal docks at the bottom.
   *Why:* the header and the page are laid out by window width, so a dock
@@ -486,4 +498,4 @@ looking at": the page stays in use.
    Escape.
 3. Give it a name and a confirm button that says what it does.
 
-Then try it with the keyboard alone, and with a screen reader.
+Then try it with the keyboard alone, with a screen reader, and at 400% zoom.

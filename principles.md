@@ -35,8 +35,8 @@ Anything a mouse can do, the keyboard can do too: get there, use it, and get
 out again. Focus never gets stuck: a dialog keeps it inside while it is
 open, and there is always a way out. A control made of several parts, such as
 a group of radios, a menu or a row of tabs, is one stop on the Tab key, and
-the arrow keys move inside it. Focus is always visible, never clipped, and
-stands out at 3:1 in every theme.
+the arrow keys move inside it. Focus is always visible, never clipped or hidden
+behind anything else on the screen, and stands out at 3:1 in every theme.
 
 *Why:* installations happen on virtual machines, remote consoles and with
 assistive technology. A working mouse is never a given.
@@ -62,7 +62,8 @@ they offer something that cannot happen.
 
 *The exceptions:*
 
-- A button that sends something waits while it is being sent.
+- A button that sends something waits while it is being sent, and keeps the
+  focus while it waits.
 - A dialog's confirm button may wait for the one thing it confirms, such as a
   device picker's "Use…" until a device is picked.
 - An option in a set the user is already looking at, such as a menu or a
@@ -140,9 +141,9 @@ PatternFly's own guidelines, and the work of people and teams like the
 
 ## 9. Every screen, every zoom
 
-Agama works on whatever screen it gets, from a phone to a wide monitor, zoomed
-in or out. Responsive goes both ways: a small screen gets a layout that fits,
-and a large one gets its space put to use.
+Agama works on whatever screen it gets, from a phone to a wide monitor, held
+upright or sideways, zoomed in or out. Responsive goes both ways: a small
+screen gets a layout that fits, and a large one gets its space put to use.
 
 *Why:* the installer can be driven from a virtual machine window, a laptop, a
 tablet or a phone, and zoom changes the width a layout gets on any of them.
