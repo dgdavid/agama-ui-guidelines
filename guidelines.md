@@ -54,7 +54,7 @@ looked up afterwards.
 
 Their TSDoc is the documentation. This index only says where to look.
 
-| Component | Read it for |
+| Component | What its TSDoc explains |
 | --- | --- |
 | `layout/Page` | Page anatomy, `Page.Section` and its naming rules |
 | `layout/Header`, `layout/StandardLayout`, `layout/MinimalLayout` | What the masthead holds, and which pages get the shared tools |

@@ -1,7 +1,7 @@
 # How the UI is put together
 
-The shape of the interface, and the reason behind each part. Read
-[the principles](principles.md) first: this page applies them.
+The shape of the interface, and the reason behind each part. It applies
+[the principles](principles.md).
 
 ## At a glance
 
