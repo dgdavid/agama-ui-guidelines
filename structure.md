@@ -332,13 +332,37 @@ looking at": the page stays in use.
 
 ## Words
 
-- **Short labels when the context already says the rest:** "Name", not
-  "Connection name", inside a connection form.
+- **Short labels inside a form, full ones on their own.** "Name", not
+  "Connection name", inside a connection form. Breadcrumbs, links and row
+  buttons name their object: "Edit connection", "Configure sda".
+- **Controls instruct, reports describe:** "Delete" on the button, "To be
+  deleted" in the report, never worded as already done. Each act has one verb
+  and one noun everywhere ("actions", never "changes").
+- **A link is named after where it goes,** not after what it reports. Danger
+  color goes on the statement, not on the link.
+- **Every place a sentence names is a link to it,** like "Uses" and "Used by"
+  between devices.
+- **Repeat only when it helps:** to keep the user oriented (a side panel
+  repeats the name of its row), to spare remembering (a summary in the list,
+  the details in the panel), or for a different task. Repetition hurts when
+  it adds noise, shows one action twice, can drift out of sync, or makes a
+  screen reader say the same thing twice. No intro paragraph restates the
+  table below it.
+- **Error messages say what is wrong with that field.** "Required" and "wrong
+  format" are different messages, and a format error shows an example ("e.g.
+  20 GiB"). The label, the help and the errors use the same word.
+- **Plain words, not symbols or internals:** "at least 5 GiB", not "≥". No
+  internal names ("space policy"), outcomes rather than mechanisms, and never
+  "the control below".
+- **Text in another language is marked with its language,** such as each
+  entry in the language list.
 - **Sentence case.** Whole sentences, never stitched together from pieces.
 - **A note for translators on every string:** what it is, and where it shows
   up.
-- **During a string freeze, reuse existing strings.** Note the better wording
-  as a follow-up.
+- **A string freeze is never dodged by reusing a string from another
+  context.** A string is reused only where it means the same thing in the
+  same place. New text waits, tracked as a follow-up, and strings that will be
+  needed are reserved early.
 
 ## Appearance
 

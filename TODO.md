@@ -74,6 +74,14 @@ Claims in the guidelines that still need checking.
 - [ ] Update `web/README.md`, which still mentions JSDoc and `@ts-check`.
 - [ ] Remove the unused `core/RowActions`, the only row menu with vertical
   dots.
+- [ ] Make every form's errors say what is wrong with each field (structure,
+  Words): add an example to network's format errors, and give localization
+  one message per field once the string freeze ends. iSCSI's errors sit in
+  one alert above the form, and get fixed with its migration below.
+- [ ] Move the remaining forms to TanStack Form. A quick search on master
+  finds, among others, the iSCSI forms, the WiFi connection form, the
+  software patterns form and several storage settings pages (boot,
+  encryption, LVM, space policy). Make the full list first.
 
 ## Ideas
 
