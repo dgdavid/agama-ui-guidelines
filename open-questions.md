@@ -61,6 +61,12 @@ would freeze them too early.
   does, or in a breadcrumb menu like the ones discussed in
   [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
+- Codes shown in options, such as keymap or locale codes: screen readers
+  read them as part of the name.
+- The time zone clock showing the time in the user's locale format.
+- The appearance control: toggle buttons or a radio group.
+- Reordering values in multi-value fields: Ctrl plus the arrow keys,
+  announced as "moved to position X of Y".
 - Whether "auto selected" on software patterns is a status, which would lose
   its pill, or a tag, which may keep it.
 - Lists of names, such as the devices an action touches: name them up to a

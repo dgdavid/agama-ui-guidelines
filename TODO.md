@@ -108,3 +108,6 @@ Claims in the guidelines that still need checking.
   unavailable without its reason". The option exception would become the
   rule, the waiting buttons would follow from it (their reason is the single
   step next to them), and forms would remain the one explicit rule.
+- Explain the jargon the UI cannot avoid, such as GPT, btrfs or by-path,
+  where it shows up, for example with a short help text. Principle 7 asks for
+  plain words, and some of these have no plain replacement.

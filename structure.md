@@ -425,6 +425,7 @@ looking at": the page stays in use.
   tab, a pop-up or a drawer: the page stays visible and the browser keeps its
   shortcuts.
 - **It opens from "More options".** The session survives moving between pages.
+- **It stays available during and after the installation.**
 - **It has a stop in front of it:** Enter goes in, Ctrl+Shift+L comes back out.
 
 ## Recipes
