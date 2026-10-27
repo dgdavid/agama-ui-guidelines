@@ -21,6 +21,7 @@ changes.
 | [Structure](structure.md) | Before building something new |
 | [Technical guidelines](guidelines.md) | While writing the code |
 | [Open questions](open-questions.md) | When you want to help settle what isn't decided yet |
+| [What is left to do](TODO.md) | When you want to see what the guidelines still ask of the code |
 
 ## How it was built
 
@@ -48,6 +49,12 @@ changes.
 
 Anything still open lives in [Open questions](open-questions.md), not in the
 pages.
+
+## What is left to do
+
+Some rules describe where the UI is going rather than where it is, and some
+claims still need checking against the code. [TODO](TODO.md) lists that work,
+so a rule marked *(planned)* always has the change that will make it true.
 
 ## How to review
 
