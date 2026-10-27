@@ -55,8 +55,8 @@ would freeze them too early.
 - An h1 inside the breadcrumb's navigation landmark, since the page title is
   the breadcrumb's last item.
 - Where an area's own tools go, such as storage's device connections (iSCSI,
-  zFCP, DASD): in a menu on the right side of the header, as the new Storage
-  page does, or in a breadcrumb menu like the ones discussed in
+  zFCP, DASD): in a menu on the right side of the header, as the Storage page
+  does, or in a breadcrumb menu like the ones discussed in
   [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
 

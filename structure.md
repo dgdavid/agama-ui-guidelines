@@ -59,6 +59,8 @@ Installation (summary, at /)
   - appearance;
   - "More options": show the configuration, download logs, terminal, change
     product.
+
+  A page may put its own tools first, such as storage's device connections.
 - **There is no call to action in the header.** An "Install" button there
   would duplicate the summary and start endless debates about its label.
 - **Icons with tooltips save room.** The tooltip is for the eyes: the control
@@ -108,6 +110,20 @@ title and a sentence on one side, the one thing to do on the other.
   question would only slow the user down.
 - **Everything else shows its cost while it is being chosen,** naming what
   is lost ("including Windows 11") rather than asking afterwards.
+- **Destructive actions on an item come last in its menu,** after a
+  separator, in the danger style.
+- **Undoing a plan for something that stays is not destructive**
+  *(playground)*: "Stop reusing" is plain, not a red "Delete".
+- **Managing the machine is not configuring it.** Tools that act on the
+  machine, such as rescanning devices or connecting iSCSI, zFCP and DASD, sit
+  in the page's own menu in the header. Resetting the page's settings goes in
+  the section's menu. The two never merge.
+- **Form actions come after the content they confirm,** in the same place on
+  every page, never inside a group of choices or a list item.
+  *Why:* the reading order follows the task, first choose and then confirm,
+  and a consistent place is easier to find.
+- **A row's menu is named after its row** ("Actions for enp1s0"), behind the
+  same horizontal dots everywhere.
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
 

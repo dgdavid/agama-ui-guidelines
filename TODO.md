@@ -63,6 +63,8 @@ Claims in the guidelines that still need checking.
 - [ ] Improve the weak TSDoc of `TextField`, `InstallerOptionsMenu` and
   `NestedContent` when touching them.
 - [ ] Update `web/README.md`, which still mentions JSDoc and `@ts-check`.
+- [ ] Remove the unused `core/RowActions`, the only row menu with vertical
+  dots.
 
 ## Ideas
 
