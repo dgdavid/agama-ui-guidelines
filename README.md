@@ -58,5 +58,7 @@ so a rule marked *(planned)* always has the change that will make it true.
 
 ## How to review
 
-The content is in an open pull request, so you can comment on any line.
-Anything that needs a longer discussion becomes an issue.
+Open an issue for anything you disagree with, find unclear, or know to be
+wrong, quoting the rule and naming its page. One issue per topic, so each can
+be discussed and closed on its own. Changes to the rules go through pull
+requests, so they can be commented on line by line.
