@@ -80,6 +80,11 @@ Claims in the guidelines that still need checking.
   Firefox overriding the page colors: buttons draw their focus ring as a
   box shadow, which forced colors remove. Check it, and add a transparent
   outline if the ring disappears.
+- [ ] "A choice that keeps existing data is remembered, and comes back as
+  soon as it is possible again" (structure, Forms): confirm it in the UI on
+  a disk with a partition that has data. Keep its data ("Current"), change
+  the mount point to swap, then back. Tests cover it, but it has not been
+  seen in the running UI.
 - [ ] Run the screen size checks (structure, Screen sizes): 320, 375 and 768
   wide, both orientations, and 400% zoom, have never been tried.
 
