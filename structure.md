@@ -13,8 +13,9 @@ The shape of the interface, and the reason behind each part. It applies
   sections below it, and no Back button.
 - [Where actions go](#where-actions-go): each action sits next to what it
   affects. Cancel never asks, and only writing to the disks asks to confirm.
-- [Forms](#forms): a setting is applied on submit or at once, a form is
-  checked on submit, and the control fits the choice it offers.
+- [Forms](#forms): settings in a form wait for Accept, settings outside
+  one apply at once, and errors show only after submitting, never while
+  typing.
 - [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): chosen by
   what the user does. A side panel shows details next to the list, a dialog
   stops everything until it is answered.
