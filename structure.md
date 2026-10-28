@@ -226,23 +226,48 @@ The rest of this section is about forms.
 - **Dependent fields react once the user has finished typing,** on leaving
   the field or picking a suggestion, not on every keystroke.
 - **When a change makes an earlier choice impossible, the field shows what is
-  possible instead, and returns to the user's choice as soon as it is
-  possible again.** Reusing a partition that already has a file system:
+  possible instead.** A choice that keeps existing data is remembered, and
+  comes back as soon as it is possible again. Any other choice goes back to
+  the default.
+  *Why:* losing a choice to keep data would destroy it without the user
+  noticing.
+
+  Reusing a partition that already has a file system, the choice to keep
+  its data comes back:
 
   ```text
   1. Keep the data
-     Mount point [ /home              ]
-     File system [ Ext4 (keep data) v ]
+     Mount point [ /home     ]
+     File system [ Current v ]
+                   Ext4 (keep data)
 
   2. Change the mount point to swap
-     Mount point [ swap               ]
-     File system   Swap                  <- the only choice, so read-only
+     Mount point [ swap      ]
+     File system   Swap          <- the only choice, so read-only
                    Any existing data on vdc1 will be destroyed when
                    installation begins.
 
   3. Change it back to /home
-     Mount point [ /home              ]
-     File system [ Ext4 (keep data) v ]  <- the user's choice again
+     Mount point [ /home     ]
+     File system [ Current v ]   <- keeping the data comes back
+                   Ext4 (keep data)
+  ```
+
+  On a new partition, any other choice goes back to the default:
+
+  ```text
+  1. Pick a file system
+     Mount point [ /home     ]
+     File system [ Ext4    v ]
+
+  2. Change the mount point to swap
+     Mount point [ swap      ]
+     File system   Swap          <- the only choice, so read-only
+
+  3. Change it back to /home
+     Mount point [ /home     ]
+     File system [ Default v ]   <- Ext4 is not remembered
+                   XFS (default file system for /home)
   ```
 - **"Automatic" says what it will be and why.** The first sentence is the
   result ("XFS will be used for /home"), the second what decided it.
