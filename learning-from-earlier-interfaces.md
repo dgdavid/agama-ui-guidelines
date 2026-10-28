@@ -1,9 +1,9 @@
 # Learning from earlier interfaces
 
-Agama started in 2022 as D-Installer, an experiment: a Linux installer driven
-from a web interface, a challenge of its own at the time. Coming from YaST,
-the team had to find the best way to make the switch and keep up with the
-web, accessibility above all.
+Agama started in 2022 as D-Installer, an experimental Linux installer driven
+from a web interface, a challenge of its own at the time. Coming from YaST, the
+team had to find the best way to make the switch and keep up with the web,
+accessibility above all.
 
 The goal grew too. D-Installer started as a radically different idea: a
 minimal installer, leaving the rest of the configuration for after the system
