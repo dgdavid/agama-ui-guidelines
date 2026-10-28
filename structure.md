@@ -13,9 +13,7 @@ The shape of the interface, and the reason behind each part. It applies
   sections below it, and no Back button.
 - [Where actions go](#where-actions-go): each action sits next to what it
   affects. Cancel never asks, and only writing to the disks asks to confirm.
-- [Forms](#forms): settings in a form wait for Accept, settings outside
-  one apply at once, and errors show only after submitting, never while
-  typing.
+- [Forms](#forms): a form sends its settings only when it is submitted.
 - [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): chosen by
   what the user does. A side panel shows details next to the list, a dialog
   stops everything until it is answered.
@@ -212,9 +210,17 @@ The rest of this section is about forms.
   text can't be reached with the keyboard. If an explanation needs a popover,
   its trigger is a real button.
 - **A form may suggest a value from another field until the user edits it.**
-  Once the user types their own value, it stops following. Pick interface
-  enp1s0 → the name becomes "enp1s0" → type "Office" → pick enp2s0 → the
-  name stays "Office".
+  Until then, the suggested value follows that field. Once the user types
+  their own, it stays. In a new connection, the name follows the interface:
+
+  ```text
+  1. Pick an interface         2. Type your own name       3. Pick another one
+
+  Interface [ enp1s0   v ]     Interface [ enp1s0     v ]  Interface [ enp2s0     v ]
+  Name      [ enp1s0     ]     Name      [ Lab network ]   Name      [ Lab network ]
+              ^ same as the                ^ typed                     ^ stays
+                interface
+  ```
 - **No field waits, disabled, for another one.** Every field stays usable,
   and the dependency is checked on submit.
 - **Dependent fields react once the user has finished typing,** on leaving
@@ -376,10 +382,15 @@ looking at": the page stays in use.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
   stays inside that part.
 - **When a choice can't apply to an item, the item says what happens instead,
-  and why** *(playground)*. Pick "Shrink" for all partitions → one file
-  system can't shrink → its row still says "Keep", next to "Cannot be shrunk"
-  and the first reason. Never "Keep" alone, which would look like the user's
-  own choice.
+  and why** *(playground)*. Never the outcome alone, which would look like the
+  user's own choice. After picking "Shrink" for all partitions of a disk:
+
+  ```text
+  Partition   Content        Action
+  vda1        NTFS, 100 GiB  Shrink
+  vda2        XFS, 20 GiB    Keep · Cannot be shrunk
+                             XFS file systems can't be made smaller
+  ```
 - **Say which kind of empty:** nothing planned, not used, or could not be
   worked out. The big empty-state layout is only for screens that are truly
   empty. A section with nothing in it gets one plain line.
@@ -413,15 +424,38 @@ looking at": the page stays in use.
   An expandable section is a button that shows or hides the content below
   it, PatternFly's
   [Expandable section](https://www.patternfly.org/components/expandable-section/).
-  Tab to "Show technical details" in a question → Enter → the details show
-  → Enter → they hide.
-- **A widget that takes every key has a stop in front of it,** with a key to
-  go in and another to come out, both said on screen. The terminal is one:
-  Tab to it → Enter → every key goes to the terminal → Ctrl+Shift+L → back
-  on the stop, and Tab goes on through the page.
+  In a question:
+
+  ```text
+  Tab                          Enter                        Enter
+
+  > Show technical details     v Hide technical details     > Show technical details
+                                   (the details)
+  ```
+- **A widget that takes every key is entered on purpose.** Tab stops on it
+  first, without going in, and the screen says which key goes in and which
+  one comes back out. The terminal is one:
+
+  ```text
+  Tab                            Enter                          Ctrl+Shift+L
+
+  +- Terminal ---------------+   +- Terminal ---------------+   +- Terminal ---------------+
+  | Press Enter or Space to  |   | # ls_                    |   | Press Enter or Space to  |
+  | type here, or Tab to     |   |   every key goes here    |   | type here, or Tab to     |
+  | move on. Then            |   |                          |   | move on. Then            |
+  | Ctrl+Shift+L to move out.|   | Ctrl+Shift+L to move     |   | Ctrl+Shift+L to move out.|
+  |                          |   | focus out                |   |                          |
+  +--------------------------+   +--------------------------+   +--------------------------+
+  ```
 - **Enter in a dialog's field submits the dialog,** unless the field uses
-  Enter itself, such as an open list of options. Type the password a
-  question asks for → Enter → the answer is sent.
+  Enter itself, such as an open list of options. In a question asking for a
+  password:
+
+  ```text
+  +- Password Required ---------+
+  | Password [ ********      ]  |   Enter: the answer is sent
+  +-----------------------------+
+  ```
 - **Changing the view of a page never moves focus:** a filter, the sort
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
@@ -545,7 +579,8 @@ See also Sara Soueidan on [text labels][ss-labels].
   shortcuts.
 - **It opens from "More options".** The session survives moving between pages.
 - **It stays available during and after the installation.**
-- **It has a stop in front of it:** Enter goes in, Ctrl+Shift+L comes back out.
+- **Tab stops on it before going in:** Enter goes in, Ctrl+Shift+L comes back
+  out.
 
 *Standards:* WCAG [2.1.2].
 
