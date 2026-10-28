@@ -147,6 +147,7 @@ half-fitting component still leaves the gap.
 Where we look: [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), the
 [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/),
 [Using ARIA](https://www.w3.org/TR/using-aria/) (native HTML before ARIA),
+[MDN](https://developer.mozilla.org/) for native elements and browser support,
 PatternFly's own guidelines, and the work of people and teams like the
 [GOV.UK Design System](https://design-system.service.gov.uk/),
 [Heydon Pickering](https://inclusive-components.design/),
