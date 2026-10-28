@@ -74,11 +74,16 @@ Installation (summary, at /)
 - **The left side says where you are.** The product shows what is being
   installed, and the breadcrumb shows the path. Its last item is the page
   title.
+  *Why:* PatternFly's [Breadcrumb][pf-breadcrumb] guidelines advise against
+  using breadcrumbs instead of a global navigation. In Agama the overview is
+  that navigation: every area is one line on it, and the breadcrumb's first
+  item, "Installation", leads back to it from any page.
 
   > [!NOTE]
   > Menus in the breadcrumb, to jump between areas without going back to the
   > summary every time, are being discussed in
-  > [#3913](https://github.com/agama-project/agama/issues/3913).
+  > [#3913](https://github.com/agama-project/agama/issues/3913). They would let
+  > the breadcrumb hold the navigation itself.
 
 - **The product keeps its full name,** never shortened, and the header keeps
   the same height on every page.
@@ -101,7 +106,8 @@ Installation (summary, at /)
   keyboard focus, and Escape hides it. Its words are the control's accessible
   name, so a screen reader doesn't hear them twice.
 
-*Standards:* WCAG [1.4.13], [2.5.3]. See also Sara Soueidan on
+*Standards:* WCAG [1.4.13], [2.5.3]; PatternFly [Tooltip][pf-tooltip],
+[Breadcrumb][pf-breadcrumb]. See also Sara Soueidan on
 [icon buttons][ss-icons].
 
 ## Pages
@@ -174,7 +180,7 @@ title and a sentence on one side, the one thing to do on the other.
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
 
-*Standards:* WCAG [3.3.4].
+*Standards:* WCAG [3.3.4]; PatternFly [Dropdown][pf-dropdown].
 
 ## Forms
 
@@ -360,7 +366,7 @@ looking at": the page stays in use.
 - **Show before acting:** the configuration is shown before it is downloaded.
 - **A menu entry that opens a dialog ends in "…".**
 
-*Standards:* APG [Dialog (Modal)], [Alert dialog].
+*Standards:* APG [Dialog (Modal)], [Alert dialog]; PatternFly [Modal][pf-modal].
 
 ## Tables and lists
 
@@ -432,7 +438,8 @@ looking at": the page stays in use.
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
 
-*Standards:* WCAG [2.2.1], [4.1.3]. See also Sara Soueidan on live regions,
+*Standards:* WCAG [2.2.1], [4.1.3]; PatternFly [Empty state][pf-empty-state],
+[Alert][pf-alert]. See also Sara Soueidan on live regions,
 [part 1][ss-live-1] and [part 2][ss-live-2].
 
 ## Keyboard and focus
@@ -553,6 +560,10 @@ See also Sara Soueidan on [text labels][ss-labels].
   that names something, such as "Beta", "Recommended" or a file system label,
   may be a pill. An action's icon, such as the trash can, never marks a
   status.
+  *Why:* PatternFly's [Label][pf-label] guidelines use labels for statuses
+  too. Agama does not: labels had ended up used for statuses, tags and links
+  alike, some clickable and some not, and a bordered pill looks like a button
+  whatever it says.
 - **One status, one color,** the same in alerts, help text and icons. No
   status color looks like a link, and when one collides with the brand color,
   the brand changes.
@@ -670,3 +681,10 @@ Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
 [ss-live-1]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/ "Accessible notifications with ARIA Live Regions (Part 1)"
 [ss-live-2]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/ "Accessible notifications with ARIA Live Regions (Part 2)"
 [ss-labels]: https://www.sarasoueidan.com/blog/accessible-text-labels/ "Accessible Text Labels For All"
+[pf-alert]: https://www.patternfly.org/components/alert/design-guidelines "PatternFly Alert design guidelines"
+[pf-breadcrumb]: https://www.patternfly.org/components/breadcrumb/design-guidelines "PatternFly Breadcrumb design guidelines"
+[pf-dropdown]: https://www.patternfly.org/components/menus/dropdown/design-guidelines "PatternFly Dropdown design guidelines"
+[pf-empty-state]: https://www.patternfly.org/components/empty-state/design-guidelines "PatternFly Empty state design guidelines"
+[pf-label]: https://www.patternfly.org/components/label/design-guidelines "PatternFly Label design guidelines"
+[pf-modal]: https://www.patternfly.org/components/modal/design-guidelines "PatternFly Modal design guidelines"
+[pf-tooltip]: https://www.patternfly.org/components/tooltip/design-guidelines "PatternFly Tooltip design guidelines"
