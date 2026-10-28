@@ -64,6 +64,9 @@ would freeze them too early.
   does, or in a breadcrumb menu like the ones discussed in
   [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
+- Whether the guidelines already in Agama (forms, pages, URL state,
+  theming...) move to this repository while it is a proof of concept, or
+  stay where they are and are only linked from here.
 - Codes shown in options, such as keymap or locale codes: screen readers
   read them as part of the name.
 - The time zone clock showing the time in the user's locale format.
