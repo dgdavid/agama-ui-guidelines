@@ -5,32 +5,35 @@ The shape of the interface, and the reason behind each part. It applies
 
 ## At a glance
 
-- [The map](#the-map): the summary is the hub, one line per area showing the
-  real choice, and installing is a deliberate step.
-- [The header](#the-header): the left says where you are, the right holds the
-  same tools on every page, and there is no call to action.
-- [Pages](#pages): one title with sections below it, named sections as
-  landmarks, and no Back button.
-- [Where actions go](#where-actions-go): Cancel never asks, a confirmation
-  only before writing to the disks, destructive actions last.
-- [Forms](#forms): settings in a form or applied at once, one submit,
-  checked on submit, and the control picked by the choice it offers.
-- [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): picked by
-  the interaction. A side panel holds details, a dialog blocks the page.
-- [Tables and lists](#tables-and-lists): rows open their side panel through a
-  real link, long names are cut in the middle, the view lives in the address.
-- [Feedback](#feedback): background work in the progress monitor, the kind of
-  empty said, one place for announcements.
-- [Keyboard and focus](#keyboard-and-focus): arrows explore, Enter commits,
-  and changing the view never moves focus.
-- [Words](#words): controls instruct and reports describe, links named after
-  where they go, plain words that translate well.
-- [Appearance](#appearance): looks match importance, a status is text, one
-  color per status, AA contrast.
-- [Screen sizes](#screen-sizes): from a phone to a wide monitor, no maximum
-  width, the side panel covering the page on narrow windows.
-- [Terminal](#terminal): docked at the bottom, always available, with a stop
-  in front of it.
+- [The map](#the-map): the summary lists every area with its actual choice,
+  and installing takes a deliberate step.
+- [The header](#the-header): where you are on the left, the same tools on the
+  right of every page, and no Install button.
+- [Pages](#pages): a standard or a minimal layout, one title per page with
+  sections below it, and no Back button.
+- [Where actions go](#where-actions-go): each action sits next to what it
+  affects. Cancel never asks, and only writing to the disks asks to confirm.
+- [Forms](#forms): a setting is applied on submit or at once, a form is
+  checked on submit, and the control fits the choice it offers.
+- [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): chosen by
+  what the user does. A side panel shows details next to the list, a dialog
+  stops everything until it is answered.
+- [Tables and lists](#tables-and-lists): a row opens its side panel through
+  the item's name, long names are cut in the middle, and filters live in the
+  address.
+- [Feedback](#feedback): work in progress shows in one place, an empty area
+  says why it is empty, and one place makes the announcements.
+- [Keyboard and focus](#keyboard-and-focus): the arrow keys move around,
+  Enter or Space picks, and focus never jumps on its own.
+- [Words](#words): buttons say what they do, reports what will happen, links
+  where they go, all in plain words that translate well.
+- [Appearance](#appearance): how loud something looks matches how much it
+  matters, a status is text with one color, and contrast is AA.
+- [Screen sizes](#screen-sizes): it works from a phone to a wide monitor,
+  with no maximum width, and the side panel covers the page on narrow
+  windows.
+- [Terminal](#terminal): docked at the bottom, always available, entered and
+  left with a key.
 - [Recipes](#recipes): the steps for a new setting, a new area or a new
   dialog.
 
@@ -106,7 +109,10 @@ Installation (summary, at /)
 | Layout | For | Examples |
 | --- | --- | --- |
 | Standard | Everything inside the installation flow | Summary, every area, edit pages, progress, finished |
-| Minimal | Pages that stand alone, with nothing to navigate to and an empty header | Login, failed, errors |
+| Minimal | Pages with nowhere to go, before the installer can be used or when the installation cannot go on. The header is empty | Login, cannot connect to the server, installation failed, unexpected error, rebooting or shutting down |
+
+Errors the user can fix keep the standard layout, on the page where they are
+fixed.
 
 Pages that stand alone usually lay out their content side by side: an icon, a
 title and a sentence on one side, the one thing to do on the other.
@@ -186,8 +192,8 @@ one applies:
 
 The rest of this section is about forms.
 
-- **A form has one submit.** Its settings never save themselves one checkbox
-  at a time.
+- **A form has one submit.** Nothing in it takes effect until it is
+  submitted, not even a checkbox.
 - **Checked on submit.** Errors are checked again on the next submit. Errors
   from the server show at the top of the form.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
@@ -198,19 +204,24 @@ The rest of this section is about forms.
   field isn't rendered at all.
 - **Help sits under the field, in a few words,** and is tied to it, so a
   screen reader reads it with the field. No examples that repeat the default
-  value.
+  value. Help that changes as the user types, such as "XFS will be used for
+  /home", is read with the field too, not announced.
 - **Short facts go in place, not behind an info icon.** A tooltip on static
   text can't be reached with the keyboard. If an explanation needs a popover,
   its trigger is a real button.
-- **Values the installer fills in give way once the user types.** It never
-  overwrites the user's own text.
+- **A form may suggest a value from another field until the user edits it.**
+  Once the user types their own value, it stops following. Pick interface
+  enp1s0 → the name becomes "enp1s0" → type "Office" → pick enp2s0 → the
+  name stays "Office".
 - **No field waits, disabled, for another one.** Every field stays usable,
   and the dependency is checked on submit.
 - **Dependent fields react once the user has finished typing,** on leaving
   the field or picking a suggestion, not on every keystroke.
-- **A later change never picks a different value for the user.** If it makes
-  an earlier choice impossible, the field goes back to automatic. The option
-  to keep what already exists comes back once it is possible again.
+- **When a change makes an earlier choice impossible, the field goes back to
+  automatic, and returns to the user's choice as soon as it is possible
+  again.** Pick "Current" file system for /home → change the mount point to
+  swap → the field shows automatic → change it back to /home → "Current"
+  again.
 - **"Automatic" says what it will be and why.** The first sentence is the
   result ("XFS will be used for /home"), the second what decided it.
 - **Inherited values say where they come from** *(playground)*: "LUKS2 · from
@@ -284,10 +295,10 @@ looking at": the page stays in use.
   *Why:* with no step at all, Back on a panel that covers the page leaves the
   page by surprise; with a step for every item, leaving the page takes as many
   Backs as items were looked at.
-- **Alerts about the whole page stay in view** *(planned)*. An alert about the
-  whole page is one line, with an action that opens its full content in a
-  dialog, and the side panel opens below it. A change made in the panel shows
-  up in the alert at once.
+- **A message about the whole page stays in view, in one line**
+  *(planned)*, with a button named after what it shows, such as "Show the
+  result", which opens the full text in a dialog. The side panel opens below
+  it, and a change made in the panel shows up in the line at once.
 
 ### Dialogs
 
@@ -359,7 +370,7 @@ looking at": the page stays in use.
   a dialog is open. Announcements are polite, and assertive only when missing
   one would lose data. A new one replaces a pending one, and sources that
   change often wait until they stop. A summary that is recalculated often is
-  never announced, and a hint that changes is linked to its field instead.
+  never announced.
 - **A dead end always offers a way out.** An empty page says why it is empty
   and what to do: "Go to network settings", "Try again".
 - **Partly bad settings keep their good parts:** the user sees "Invalid
@@ -380,10 +391,18 @@ looking at": the page stays in use.
 - **A field holding several values is still one Tab stop.** The arrow keys
   reach the values.
 - **Enter and Space toggle an expandable section;** the arrow keys never do.
+  An expandable section is a button that shows or hides the content below
+  it, PatternFly's
+  [Expandable section](https://www.patternfly.org/components/expandable-section/).
+  Tab to "Show technical details" in a question → Enter → the details show
+  → Enter → they hide.
 - **A widget that takes every key has a stop in front of it,** with a key to
-  go in and another to come out, both said on screen. The terminal is one.
+  go in and another to come out, both said on screen. The terminal is one:
+  Tab to it → Enter → every key goes to the terminal → Ctrl+Shift+L → back
+  on the stop, and Tab goes on through the page.
 - **Enter in a dialog's field submits the dialog,** unless the field uses
-  Enter itself, such as an open list of options.
+  Enter itself, such as an open list of options. Type the password a
+  question asks for → Enter → the answer is sent.
 - **Changing the view of a page never moves focus:** a filter, the sort
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
@@ -400,7 +419,8 @@ looking at": the page stays in use.
 - **Controls instruct, reports describe:** "Delete" on the button, "To be
   deleted" in the report, never worded as already done. Each act has one verb
   and one noun everywhere ("actions", never "changes").
-- **A link is named after where it goes,** not after what it reports. Danger
+- **A link is named after where it goes,** not after what it reports: "Go to
+  storage settings" on an alert about storage, not "Invalid settings". Danger
   color goes on the statement, not on the link.
 - **Every place a sentence names is a link to it,** like "Uses" and "Used by"
   between devices.
@@ -418,8 +438,8 @@ looking at": the page stays in use.
   so voice control finds it by what the user sees. Added context, such as
   "Hostname" in "Hostname mode", goes around the label, never in place of
   it.
-- **Plain words, not symbols or internals:** "at least 5 GiB", not "≥". No
-  internal names ("space policy"), outcomes rather than mechanisms, and never
+- **Plain words, not symbols or internals.** "At least 5 GiB", not "≥". No
+  internal names ("space policy"). Outcomes rather than mechanisms. Never
   "the control below".
 - **Text in another language is marked with its language,** such as each
   entry in the language list.
@@ -460,7 +480,8 @@ See also Sara Soueidan on [text labels][ss-labels].
   contrast is PatternFly's AAA theme, and no branding overrides it.
   *Why:* AAA in the default themes would flatten the visual hierarchy, and
   the high contrast setting exists for users who need more.
-- **When the system asks for reduced motion, nothing moves.**
+- **Reduced motion is respected:** when the operating system is set to
+  reduce motion, nothing slides, fades or spins.
 - **Supported browsers:** Firefox, the browser on the ISO, and current
   standard engines. No workarounds for older ones.
 
@@ -482,7 +503,7 @@ See also Sara Soueidan on [text labels][ss-labels].
 - **A side panel covers the page on narrow windows** *(planned)*, with a
   backdrop and the page underneath out of reach. It then behaves as a dialog:
   focus stays inside, and Escape closes it. On wide windows it sits next to
-  the list, with none of that.
+  the list, with no backdrop, and the page stays usable.
 - **A side panel belongs to a page, a dock to the whole window.** A dock takes
   height, not width: the terminal docks at the bottom.
   *Why:* the header and the page are laid out by window width, so a dock
