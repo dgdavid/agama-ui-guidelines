@@ -219,11 +219,25 @@ The rest of this section is about forms.
   and the dependency is checked on submit.
 - **Dependent fields react once the user has finished typing,** on leaving
   the field or picking a suggestion, not on every keystroke.
-- **When a change makes an earlier choice impossible, the field goes back to
-  automatic, and returns to the user's choice as soon as it is possible
-  again.** Pick "Current" file system for /home → change the mount point to
-  swap → the field shows automatic → change it back to /home → "Current"
-  again.
+- **When a change makes an earlier choice impossible, the field shows what is
+  possible instead, and returns to the user's choice as soon as it is
+  possible again.** Reusing a partition that already has a file system:
+
+  ```text
+  1. Keep the data
+     Mount point [ /home              ]
+     File system [ Ext4 (keep data) v ]
+
+  2. Change the mount point to swap
+     Mount point [ swap               ]
+     File system   Swap                  <- the only choice, so read-only
+                   Any existing data on vdc1 will be destroyed when
+                   installation begins.
+
+  3. Change it back to /home
+     Mount point [ /home              ]
+     File system [ Ext4 (keep data) v ]  <- the user's choice again
+  ```
 - **"Automatic" says what it will be and why.** The first sentence is the
   result ("XFS will be used for /home"), the second what decided it.
 - **Inherited values say where they come from** *(playground)*: "LUKS2 · from
