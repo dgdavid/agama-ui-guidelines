@@ -24,6 +24,12 @@ If both hold, the team shapes the rules from here, and the pages move to
 | [Open questions](open-questions.md) | What is deliberately left undecided |
 | [What is left to do](TODO.md) | The claims still to check against the code, and the changes in Agama that make the planned rules true |
 
+## Background
+
+[Learning from earlier interfaces](learning-from-earlier-interfaces.md) is not
+a guideline. It tells how the interface got here: the versions before this
+one, and why each one changed, so the same mistakes are not made twice.
+
 ## How it was built
 
 1. **From the pull requests.** An AI assistant (Claude Code) was told to read
