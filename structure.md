@@ -359,8 +359,11 @@ looking at": the page stays in use.
   "nothing changed". The message goes away on the next edit.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
   stays inside that part.
-- **When a choice can't apply to an item, the item says so** *(playground)*:
-  "cannot be shrunk", not "keep", with the first reason underneath.
+- **When a choice can't apply to an item, the item says what happens instead,
+  and why** *(playground)*. Pick "Shrink" for all partitions → one file
+  system can't shrink → its row still says "Keep", next to "Cannot be shrunk"
+  and the first reason. Never "Keep" alone, which would look like the user's
+  own choice.
 - **Say which kind of empty:** nothing planned, not used, or could not be
   worked out. The big empty-state layout is only for screens that are truly
   empty. A section with nothing in it gets one plain line.
