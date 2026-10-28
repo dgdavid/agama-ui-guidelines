@@ -216,9 +216,9 @@ The rest of this section is about forms.
   ```text
   1. Pick an interface         2. Type your own name       3. Pick another one
 
-  Interface [ enp1s0   v ]     Interface [ enp1s0     v ]  Interface [ enp2s0     v ]
-  Name      [ enp1s0     ]     Name      [ Lab network ]   Name      [ Lab network ]
-              ^ same as the                ^ typed                     ^ stays
+  Interface [ enp1s0      v ]  Interface [ enp1s0      v ]  Interface [ enp2s0      v ]
+  Name      [ enp1s0        ]  Name      [ Lab network   ]  Name      [ Lab network   ]
+              ^ same as the                ^ typed                      ^ stays
                 interface
   ```
 - **No field waits, disabled, for another one.** Every field stays usable,
