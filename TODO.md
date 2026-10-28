@@ -24,6 +24,8 @@ until the team agrees with it, or is removed from the pages if not.
 - [ ] A side panel that covers the page behaves as a dialog (structure,
   Screen sizes).
 - [ ] The recipes check at 400% zoom (structure, Recipes).
+- [ ] A control that shows more names what it shows (structure, Words).
+  Added after the first team feedback.
 
 ## Checks against the code
 

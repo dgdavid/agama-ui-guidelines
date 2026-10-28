@@ -425,6 +425,10 @@ looking at": the page stays in use.
 - **A link is named after where it goes,** not after what it reports: "Go to
   storage settings" on an alert about storage, not "Invalid settings". Danger
   color goes on the statement, not on the link.
+- **A control that shows more names what it shows:** "Show technical
+  details", "Show 3 subvolume actions". Avoid a bare "Show more" wherever
+  possible: a screen reader user moving from control to control hears it
+  with no context, and can't tell several of them apart.
 - **Every place a sentence names is a link to it,** like "Uses" and "Used by"
   between devices.
 - **Repeat only when it helps:** to keep the user oriented (a side panel
