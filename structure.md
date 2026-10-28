@@ -29,7 +29,8 @@ The shape of the interface, and the reason behind each part. It applies
 - [Words](#words): buttons say what they do, reports what will happen, links
   where they go, all in plain words that translate well.
 - [Appearance](#appearance): how loud something looks matches how much it
-  matters, a status is text with one color, and contrast is AA.
+  matters, a status is said in words that screen readers read too, with
+  color only backing them, and contrast is AA.
 - [Screen sizes](#screen-sizes): it works from a phone to a wide monitor,
   with no maximum width, and the side panel covers the page on narrow
   windows.
