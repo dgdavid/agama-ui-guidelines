@@ -141,6 +141,11 @@ When PatternFly only half solves the problem, writing our own is the right
 call. A departure from a W3C pattern needs a stated reason that helps
 accessibility.
 
+PatternFly and the other guidance we follow are not rules either. Agama may
+set its own rule when it serves users better in an installer, and never at the
+cost of a standard. Each such rule says, next to it, what it departs from and
+why.
+
 *Why:* standard behavior is behavior users and assistive tools already know. A
 half-fitting component still leaves the gap.
 

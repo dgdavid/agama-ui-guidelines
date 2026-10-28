@@ -26,6 +26,9 @@ until the team agrees with it, or is removed from the pages if not.
 - [ ] The recipes check at 400% zoom (structure, Recipes).
 - [ ] A control that shows more names what it shows (structure, Words).
   Added after the first team feedback.
+- [ ] Agama may set its own rule over PatternFly or other guidance when it
+  serves users better in an installer, never at the cost of a standard, and
+  says what it departs from and why (principles, 8).
 
 ## Checks against the code
 
