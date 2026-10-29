@@ -14,8 +14,9 @@ It is not the final text. It tests two things:
 If both hold, the team shapes the rules from here, and the pages move to
 `doc/ui/` in the Agama repository.
 
-For now it holds more than the guidelines: also the work still pending to
-make Agama follow them, in [TODO](TODO.md).
+For now it holds more than the guidelines: also the decisions still to make,
+in [Open questions](open-questions.md), and the work still pending to make
+Agama follow them, in [TODO](TODO.md).
 
 ## What is in it
 
