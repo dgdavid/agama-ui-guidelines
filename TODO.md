@@ -34,6 +34,9 @@ until the team agrees with it, or is removed from the pages if not.
 - [ ] The browser's own error messages never show (structure, Forms).
 - [ ] A toast stays at least five seconds, waits while the pointer or the
   focus is on it, and can be closed (structure, Feedback).
+- [ ] A failed submit reaches screen readers, by an announcement or by moving
+  focus (structure, Keyboard and focus). WCAG asks for it, and it came up
+  while comparing React Aria's answer with the code.
 - [ ] Editing the text of a combobox clears the highlighted option
   (structure, Keyboard and focus).
 - [ ] An option in a list or a menu holds only text and icons (structure,
@@ -114,10 +117,6 @@ Claims in the guidelines that still need checking.
 - [ ] The header's tooltips on a touch screen (structure, The header):
   PatternFly shows them on the tap that presses the button. Check whether
   one stays stuck over the dialog the button opens.
-- [ ] "A failed submit brings its alert into view" (structure, Keyboard and
-  focus) reaches screen readers too: today the alert is only scrolled into
-  view, focus stays on the submit button and nothing is announced. Confirm
-  it with Orca.
 
 ## Research
 
@@ -136,6 +135,11 @@ Claims in the guidelines that still need checking.
 
 ## Changes in Agama
 
+- [ ] Make a failed submit reach screen readers. Today its alert is only
+  scrolled into view: focus stays on the submit button and nothing is
+  announced, while WCAG 4.1.3 asks for one or the other. Which of the two is
+  the open question on focus after a failed submit. Confirm the gap with Orca
+  first.
 - [ ] Clean up the deprecated `Page.Back`, `Page.Cancel` and `Page.Submit`
   against master: remove what nothing uses any more, and the TSDoc that still
   describes them. The guidelines are already written as if this were done.

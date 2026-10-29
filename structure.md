@@ -507,10 +507,13 @@ looking at": the page stays in use.
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
   *(playground)*. Going in takes a deliberate step.
-- **A failed submit brings its alert into view,** not the top of the page.
+- **A failed submit brings its alert into view,** not the top of the page,
+  and screen readers are told, either by announcing the alert or by moving
+  focus to it.
 
-*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion]. See also
-React Aria on [building a combobox][ra-combobox] and [list boxes][ra-listbox].
+*Standards:* WCAG [2.1.2], [3.2.2], [4.1.3]; APG [Combobox], [Accordion].
+See also React Aria on [building a combobox][ra-combobox] and
+[list boxes][ra-listbox].
 
 ## Words
 
