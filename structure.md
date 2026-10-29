@@ -5,32 +5,35 @@ The shape of the interface, and the reason behind each part. It applies
 
 ## At a glance
 
-- [The map](#the-map): the summary is the hub, one line per area showing the
-  real choice, and installing is a deliberate step.
-- [The header](#the-header): the left says where you are, the right holds the
-  same tools on every page, and there is no call to action.
-- [Pages](#pages): one title with sections below it, named sections as
-  landmarks, and no Back button.
-- [Where actions go](#where-actions-go): Cancel never asks, a confirmation
-  only before writing to the disks, destructive actions last.
-- [Forms](#forms): settings in a form or applied at once, one submit,
-  checked on submit, and the control picked by the choice it offers.
-- [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): picked by
-  the interaction. A side panel holds details, a dialog blocks the page.
-- [Tables and lists](#tables-and-lists): rows open their side panel through a
-  real link, long names are cut in the middle, the view lives in the address.
-- [Feedback](#feedback): background work in the progress monitor, the kind of
-  empty said, one place for announcements.
-- [Keyboard and focus](#keyboard-and-focus): arrows explore, Enter commits,
-  and changing the view never moves focus.
-- [Words](#words): controls instruct and reports describe, links named after
-  where they go, plain words that translate well.
-- [Appearance](#appearance): looks match importance, a status is text, one
-  color per status, AA contrast.
-- [Screen sizes](#screen-sizes): from a phone to a wide monitor, no maximum
-  width, the side panel covering the page on narrow windows.
-- [Terminal](#terminal): docked at the bottom, always available, with a stop
-  in front of it.
+- [The map](#the-map): the summary lists every area with its actual choice,
+  and installing takes a deliberate step.
+- [The header](#the-header): where you are on the left, the same tools on the
+  right of every page, and no Install button.
+- [Pages](#pages): a standard or a minimal layout, one title per page with
+  sections below it, and no Back button.
+- [Where actions go](#where-actions-go): each action sits next to what it
+  affects. Cancel never asks, and only writing to the disks asks to confirm.
+- [Forms](#forms): a form sends its settings only when it is submitted.
+- [Pages, side panels and dialogs](#pages-side-panels-and-dialogs): chosen by
+  what the user does. A side panel shows details next to the list, a dialog
+  stops everything until it is answered.
+- [Tables and lists](#tables-and-lists): a row opens its side panel through
+  the item's name, long names are cut in the middle, and filters live in the
+  address.
+- [Feedback](#feedback): work in progress shows in one place, an empty area
+  says why it is empty, and one place makes the announcements.
+- [Keyboard and focus](#keyboard-and-focus): the arrow keys move around,
+  Enter or Space picks, and focus never jumps on its own.
+- [Words](#words): buttons say what they do, reports what will happen, links
+  where they go, all in plain words that translate well.
+- [Appearance](#appearance): how loud something looks matches how much it
+  matters, a status is said in words that screen readers read too, with
+  color only backing them, and contrast is AA.
+- [Screen sizes](#screen-sizes): it works from a phone to a wide monitor,
+  with no maximum width, and the side panel covers the page on narrow
+  windows.
+- [Terminal](#terminal): docked at the bottom, always available, entered and
+  left with a key.
 - [Recipes](#recipes): the steps for a new setting, a new area or a new
   dialog.
 
@@ -71,11 +74,16 @@ Installation (summary, at /)
 - **The left side says where you are.** The product shows what is being
   installed, and the breadcrumb shows the path. Its last item is the page
   title.
+  *Why:* PatternFly's [Breadcrumb][pf-breadcrumb] guidelines advise against
+  using breadcrumbs instead of a global navigation. In Agama the overview is
+  that navigation: every area is one line on it, and the breadcrumb's first
+  item, "Installation", leads back to it from any page.
 
   > [!NOTE]
   > Menus in the breadcrumb, to jump between areas without going back to the
   > summary every time, are being discussed in
-  > [#3913](https://github.com/agama-project/agama/issues/3913).
+  > [#3913](https://github.com/agama-project/agama/issues/3913). They would let
+  > the breadcrumb hold the navigation itself.
 
 - **The product keeps its full name,** never shortened, and the header keeps
   the same height on every page.
@@ -94,15 +102,23 @@ Installation (summary, at /)
   A page may put its own tools first, such as storage's device connections.
 - **There is no call to action in the header.** An "Install" button there
   would duplicate the summary and start endless debates about its label.
-- **Icons with tooltips save room.** The tooltip is for the eyes: the control
-  already has its accessible name.
+- **Icons with tooltips save room.** The tooltip shows on hover and on
+  keyboard focus, and Escape hides it. Its words are the control's accessible
+  name, so a screen reader doesn't hear them twice.
+
+*Standards:* WCAG [1.4.13], [2.5.3]; PatternFly [Tooltip][pf-tooltip],
+[Breadcrumb][pf-breadcrumb]. See also Sara Soueidan on
+[icon buttons][ss-icons].
 
 ## Pages
 
 | Layout | For | Examples |
 | --- | --- | --- |
 | Standard | Everything inside the installation flow | Summary, every area, edit pages, progress, finished |
-| Minimal | Pages that stand alone, with nothing to navigate to and an empty header | Login, failed, errors |
+| Minimal | Pages with nowhere to go, before the installer can be used or when the installation cannot go on. The header is empty | Login, cannot connect to the server, installation failed, unexpected error, rebooting or shutting down |
+
+Errors the user can fix keep the standard layout, on the page where they are
+fixed.
 
 Pages that stand alone usually lay out their content side by side: an icon, a
 title and a sentence on one side, the one thing to do on the other.
@@ -122,6 +138,12 @@ title and a sentence on one side, the one thing to do on the other.
   back. A page that has to send the user elsewhere uses a link named after
   where it goes.
 - **The reading order is the screen order.** Layouts also work right to left.
+- **The browser tab names the page** *(planned)*: "Storage · Agama", not
+  "Agama" everywhere.
+  *Why:* the tab title is the first thing a screen reader says after moving
+  to a page, and how anyone finds the tab among others.
+
+*Standards:* WCAG [1.3.1], [1.3.2], [2.4.2], [2.4.3], [2.4.6].
 
 ## Where actions go
 
@@ -143,7 +165,7 @@ title and a sentence on one side, the one thing to do on the other.
   is lost ("including Windows 11") rather than asking afterwards.
 - **Destructive actions on an item come last in its menu,** after a
   separator, in the danger style.
-- **Undoing a plan for something that stays is not destructive**
+- **Undoing a plan is not destructive when the item itself stays**
   *(playground)*: "Stop reusing" is plain, not a red "Delete".
 - **Managing the machine is not configuring it.** Tools that act on the
   machine, such as rescanning devices or connecting iSCSI, zFCP and DASD, sit
@@ -157,6 +179,8 @@ title and a sentence on one side, the one thing to do on the other.
   same horizontal dots everywhere.
 - **No sticky action bar.** The actions belong to the form they submit.
 - **The order of buttons inside forms and dialogs is still to be agreed.**
+
+*Standards:* WCAG [3.3.4]; PatternFly [Dropdown][pf-dropdown].
 
 ## Forms
 
@@ -174,8 +198,8 @@ one applies:
 
 The rest of this section is about forms.
 
-- **A form has one submit.** Its settings never save themselves one checkbox
-  at a time.
+- **A form has one submit.** Nothing in it takes effect until it is
+  submitted, not even a checkbox.
 - **Checked on submit.** Errors are checked again on the next submit. Errors
   from the server show at the top of the form.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
@@ -184,20 +208,73 @@ The rest of this section is about forms.
   when circumstances leave only one answer ("New partition (all partitions on
   /dev/vdd are already assigned)"). When there could never be a choice, the
   field isn't rendered at all.
-- **Help sits under the field, in a few words.** No examples that repeat the
-  default value.
+- **Help sits under the field, in a few words,** and is tied to it, so a
+  screen reader reads it with the field. No examples that repeat the default
+  value. Help that changes as the user types, such as "XFS will be used for
+  /home", is read with the field too, not announced.
 - **Short facts go in place, not behind an info icon.** A tooltip on static
   text can't be reached with the keyboard. If an explanation needs a popover,
   its trigger is a real button.
-- **Values the installer fills in step aside once the user types.** It never
-  overwrites the user's own text.
+- **A form may suggest a value from another field until the user edits it.**
+  Until then, the suggested value follows that field. Once the user types
+  their own, it stays. In a new connection, the name follows the interface:
+
+  ```text
+  1. Pick an interface         2. Type your own name       3. Pick another one
+
+  Interface [ enp1s0      v ]  Interface [ enp1s0      v ]  Interface [ enp2s0      v ]
+  Name      [ enp1s0        ]  Name      [ Lab network   ]  Name      [ Lab network   ]
+              ^ same as the                ^ typed                      ^ stays
+                interface
+  ```
 - **No field waits, disabled, for another one.** Every field stays usable,
   and the dependency is checked on submit.
 - **Dependent fields react once the user has finished typing,** on leaving
   the field or picking a suggestion, not on every keystroke.
-- **A later change never swaps in a different value.** When it makes an
-  earlier choice impossible, the field falls back to automatic, and a choice
-  to keep what exists comes back once it is possible again.
+- **When a change makes an earlier choice impossible, the field shows what is
+  possible instead.** A choice that keeps existing data is remembered, and
+  comes back as soon as it is possible again. Any other choice goes back to
+  the default.
+  *Why:* losing a choice to keep data would destroy it without the user
+  noticing.
+
+  Reusing a partition that already has a file system, the choice to keep
+  its data comes back:
+
+  ```text
+  1. Keep the data
+     Mount point [ /home     ]
+     File system [ Current v ]
+                   Ext4 (keep data)
+
+  2. Change the mount point to swap
+     Mount point [ swap      ]
+     File system   Swap          <- the only choice, so read-only
+                   Any existing data on vdc1 will be destroyed when
+                   installation begins.
+
+  3. Change it back to /home
+     Mount point [ /home     ]
+     File system [ Current v ]   <- keeping the data comes back
+                   Ext4 (keep data)
+  ```
+
+  On a new partition, any other choice goes back to the default:
+
+  ```text
+  1. Pick a file system
+     Mount point [ /home     ]
+     File system [ Ext4    v ]
+
+  2. Change the mount point to swap
+     Mount point [ swap      ]
+     File system   Swap          <- the only choice, so read-only
+
+  3. Change it back to /home
+     Mount point [ /home     ]
+     File system [ Default v ]   <- Ext4 is not remembered
+                   XFS (default file system for /home)
+  ```
 - **"Automatic" says what it will be and why.** The first sentence is the
   result ("XFS will be used for /home"), the second what decided it.
 - **Inherited values say where they come from** *(playground)*: "LUKS2 · from
@@ -225,7 +302,7 @@ Pick the control by the choice it offers:
 | One of two or three weighty options | Radios, each with its consequence on one line |
 
 How visible a field should be depends on how many people need it. Pick the
-first rung that fits:
+first level that fits:
 
 1. **Always shown.** Most people need it.
 2. **Revealed by a choice the user makes** ("Static IP" reveals the address
@@ -235,6 +312,8 @@ first rung that fits:
    "(optional)".
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
+
+*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2].
 
 ## Pages, side panels and dialogs
 
@@ -252,7 +331,9 @@ looking at": the page stays in use.
 
 - **Opening a dialog or a side panel moves focus into it,** onto the current
   choice if there is one. Closing it returns focus to the control that opened
-  it.
+  it, or to the nearest sensible place when that control is gone.
+
+*Standards:* WCAG [2.4.3]; APG [Dialog (Modal)].
 
 ### Side panels
 
@@ -267,15 +348,16 @@ looking at": the page stays in use.
   *Why:* with no step at all, Back on a panel that covers the page leaves the
   page by surprise; with a step for every item, leaving the page takes as many
   Backs as items were looked at.
-- **What changes the whole stays in view** *(planned)*. An alert about the
-  whole page is one line, with an action that opens its full content in a
-  dialog, and the side panel opens below it. A change made in the panel shows
-  up in the alert at once.
+- **A message about the whole page stays in view, in one line**
+  *(planned)*, with a button named after what it shows, such as "Show the
+  result", which opens the full text in a dialog. The side panel opens below
+  it, and a change made in the panel shows up in the line at once.
 
 ### Dialogs
 
 - **A dialog the user can walk away from** has a close button and closes with
-  Escape.
+  Escape. A question the installer must get answered is an alert dialog
+  *(planned)*, so screen readers say it is urgent.
 - **Every dialog has a name.** Its confirm button says what it does: "Use
   enp1s0", not "OK".
 - **A dialog always opens with the current values.** What was left
@@ -283,6 +365,8 @@ looking at": the page stays in use.
 - **Nothing is applied until confirmed.**
 - **Show before acting:** the configuration is shown before it is downloaded.
 - **A menu entry that opens a dialog ends in "…".**
+
+*Standards:* APG [Dialog (Modal)], [Alert dialog]; PatternFly [Modal][pf-modal].
 
 ## Tables and lists
 
@@ -312,34 +396,51 @@ looking at": the page stays in use.
   themselves, the layout never goes in the address, and typing in a filter
   doesn't add a history step per key.
 
+*Standards:* WCAG [1.3.1], [4.1.3]. See also Sara Soueidan on
+[keyboard-friendly listings][ss-listings].
+
 ## Feedback
 
 - **Background work shows in the progress monitor.** A blocking overlay covers
   only the page that is waiting, and only until that work is done.
 - **Progress shows the step and the total.** No made-up percentages.
 - **A long side action,** such as downloading logs, gets a toast when it starts
-  and another when it finishes.
+  and another when it finishes. A toast is announced, and since it goes away
+  on its own, it never holds the only copy of an error or the only way to do
+  something.
 - **A form that stays open after saving says so,** telling "saved" apart from
   "nothing changed". The message goes away on the next edit.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
   stays inside that part.
-- **When a choice can't apply to an item, the item says so** *(playground)*:
-  "cannot be shrunk", not "keep", with the first reason underneath.
+- **When a choice can't apply to an item, the item says what happens instead,
+  and why** *(playground)*. Never the outcome alone, which would look like the
+  user's own choice. After picking "Shrink" for all partitions of a disk:
+
+  ```text
+  Partition   Content        Action
+  vda1        NTFS, 100 GiB  Shrink
+  vda2        XFS, 20 GiB    Keep · Cannot be shrunk
+                             XFS file systems can't be made smaller
+  ```
 - **Say which kind of empty:** nothing planned, not used, or could not be
   worked out. The big empty-state layout is only for screens that are truly
   empty. A section with nothing in it gets one plain line.
-- **Standing information is not an alert.** It gets a quiet treatment, and an
-  ordinary result has no alert heading and no announcement.
+- **Information that is always there is not an alert.** It is shown quietly,
+  and an ordinary result has no alert heading and no announcement.
 - **One place makes announcements for screen readers.** It keeps working while
   a dialog is open. Announcements are polite, and assertive only when missing
-  one would lose data. A new one replaces a pending one, and noisy sources
-  wait until they settle. A summary that is recalculated often is never
-  announced, and a hint that changes is linked to its field instead.
+  one would lose data. A new one replaces a pending one, and sources that
+  change often wait until they stop. A summary that is recalculated often is
+  never announced.
 - **A dead end always offers a way out.** An empty page says why it is empty
   and what to do: "Go to network settings", "Try again".
 - **Partly bad settings keep their good parts:** the user sees "Invalid
   settings", not a crash. A missing item gets a "not found" page, and a crash
   gets a readable error page.
+
+*Standards:* WCAG [2.2.1], [4.1.3]; PatternFly [Empty state][pf-empty-state],
+[Alert][pf-alert]. See also Sara Soueidan on live regions,
+[part 1][ss-live-1] and [part 2][ss-live-2].
 
 ## Keyboard and focus
 
@@ -352,14 +453,48 @@ looking at": the page stays in use.
 - **A field holding several values is still one Tab stop.** The arrow keys
   reach the values.
 - **Enter and Space toggle an expandable section;** the arrow keys never do.
-- **A widget that takes every key has a stop in front of it,** with a key to
-  go in and another to come out, both said on screen. The terminal is one.
-- **Enter in a dialog's field submits the dialog.**
+  An expandable section is a button that shows or hides the content below
+  it, PatternFly's
+  [Expandable section](https://www.patternfly.org/components/expandable-section/).
+  In a question:
+
+  ```text
+  Tab                          Enter                        Enter
+
+  > Show technical details     v Hide technical details     > Show technical details
+                                   (the details)
+  ```
+- **A widget that takes every key is entered on purpose.** Tab stops on it
+  first, without going in, and the screen says which key goes in and which
+  one comes back out. The terminal is one:
+
+  ```text
+  Tab                            Enter                          Ctrl+Shift+L
+
+  +- Terminal ---------------+   +- Terminal ---------------+   +- Terminal ---------------+
+  | Press Enter or Space to  |   | # ls_                    |   | Press Enter or Space to  |
+  | type here, or Tab to     |   |   every key goes here    |   | type here, or Tab to     |
+  | move on. Then            |   |                          |   | move on. Then            |
+  | Ctrl+Shift+L to move out.|   | Ctrl+Shift+L to move     |   | Ctrl+Shift+L to move out.|
+  |                          |   | focus out                |   |                          |
+  +--------------------------+   +--------------------------+   +--------------------------+
+  ```
+- **Enter in a dialog's field submits the dialog,** unless the field uses
+  Enter itself, such as an open list of options. In a question asking for a
+  password:
+
+  ```text
+  +- Password Required ---------+
+  | Password [ ********      ]  |   Enter: the answer is sent
+  +-----------------------------+
+  ```
 - **Changing the view of a page never moves focus:** a filter, the sort
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
   *(playground)*. Going in takes a deliberate step.
 - **A failed submit brings its alert into view,** not the top of the page.
+
+*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion].
 
 ## Words
 
@@ -369,8 +504,13 @@ looking at": the page stays in use.
 - **Controls instruct, reports describe:** "Delete" on the button, "To be
   deleted" in the report, never worded as already done. Each act has one verb
   and one noun everywhere ("actions", never "changes").
-- **A link is named after where it goes,** not after what it reports. Danger
+- **A link is named after where it goes,** not after what it reports: "Go to
+  storage settings" on an alert about storage, not "Invalid settings". Danger
   color goes on the statement, not on the link.
+- **A control that shows more names what it shows:** "Show technical
+  details", "Show 3 subvolume actions". Avoid a bare "Show more" wherever
+  possible: a screen reader user moving from control to control hears it
+  with no context, and can't tell several of them apart.
 - **Every place a sentence names is a link to it,** like "Uses" and "Used by"
   between devices.
 - **Repeat only when it helps:** to keep the user oriented (a side panel
@@ -379,13 +519,16 @@ looking at": the page stays in use.
   it adds noise, shows one action twice, can drift out of sync, or makes a
   screen reader say the same thing twice. No intro paragraph restates the
   table below it.
-- **Error messages say what is wrong with that field.** "Required" and "wrong
-  format" are different messages, and a format error shows an example ("e.g.
-  20 GiB"). The label, the help and the errors use the same word.
-- **A control's accessible name starts with its visible label,** so voice
-  control finds it by what the user sees.
-- **Plain words, not symbols or internals:** "at least 5 GiB", not "≥". No
-  internal names ("space policy"), outcomes rather than mechanisms, and never
+- **Error messages say what is wrong with that field,** next to it, and are
+  tied to it so a screen reader reads them with the field. "Required" and
+  "wrong format" are different messages, and a format error shows an example
+  ("e.g. 20 GiB"). The label, the help and the errors use the same word.
+- **A control's accessible name includes its visible label, word for word,**
+  so voice control finds it by what the user sees. Added context, such as
+  "Hostname" in "Hostname mode", goes around the label, never in place of
+  it.
+- **Plain words, not symbols or internals.** "At least 5 GiB", not "≥". No
+  internal names ("space policy"). Outcomes rather than mechanisms. Never
   "the control below".
 - **Text in another language is marked with its language,** such as each
   entry in the language list.
@@ -396,6 +539,9 @@ looking at": the page stays in use.
   context.** A string is reused only where it means the same thing in the
   same place. New text waits, tracked as a follow-up, and strings that will be
   needed are reserved early.
+
+*Standards:* WCAG [1.3.3], [2.4.4], [2.5.3], [3.1.2], [3.3.1], [3.3.3].
+See also Sara Soueidan on [text labels][ss-labels].
 
 ## Appearance
 
@@ -414,23 +560,32 @@ looking at": the page stays in use.
   that names something, such as "Beta", "Recommended" or a file system label,
   may be a pill. An action's icon, such as the trash can, never marks a
   status.
+  *Why:* PatternFly's [Label][pf-label] guidelines use labels for statuses
+  too. Agama does not: labels had ended up used for statuses, tags and links
+  alike, some clickable and some not, and a bordered pill looks like a button
+  whatever it says.
 - **One status, one color,** the same in alerts, help text and icons. No
   status color looks like a link, and when one collides with the brand color,
   the brand changes.
-- **Contrast is AA:** 4.5:1 for text, muted and disabled text included, and
-  3:1 for icons, borders, focus rings and everything else that isn't text.
-  High contrast is PatternFly's AAA theme, and no branding overrides it.
+- **Contrast is AA:** 4.5:1 for text, and 3:1 for large text and for the
+  icons, borders and focus rings needed to see a control or its state. Muted
+  and disabled text get 4.5:1 too, which is stricter than WCAG asks. High
+  contrast is PatternFly's AAA theme, and no branding overrides it.
   *Why:* AAA in the default themes would flatten the visual hierarchy, and
   the high contrast setting exists for users who need more.
-- **When the system asks for reduced motion, nothing moves.**
+- **Reduced motion is respected:** when the operating system is set to
+  reduce motion, nothing slides, fades or spins.
 - **Supported browsers:** Firefox, the browser on the ISO, and current
   standard engines. No workarounds for older ones.
 
+*Standards:* WCAG [1.4.1], [1.4.3], [1.4.11], [2.3.3].
+
 ## Screen sizes
 
-- **Every screen works from a phone to a wide monitor.** Check it at 375 wide
-  (a phone), 768 (a tablet), 1024 (the usual virtual machine), 1440, 1920 and
-  2560, and at 200% and 400% zoom.
+- **Every screen works from a phone to a wide monitor.** Check it at 320 wide
+  (the narrowest WCAG asks for), 375 (a phone), 768 (a tablet), 1024 (the
+  usual virtual machine), 1440, 1920 and 2560, at 200% and 400% zoom, and
+  with the phone or tablet held both ways.
 - **The app as a whole has no maximum width.** What gets hard to read is
   limited on its own: text around 65 to 75 characters wide, a narrow form on
   a fluid page.
@@ -439,8 +594,9 @@ looking at": the page stays in use.
 - **Wide screens are put to use** *(playground)*: a side panel next to its
   list, sections side by side, where it helps.
 - **A side panel covers the page on narrow windows** *(planned)*, with a
-  backdrop and the page underneath out of reach. On wide windows it sits next
-  to the list, with neither.
+  backdrop and the page underneath out of reach. It then behaves as a dialog:
+  focus stays inside, and Escape closes it. On wide windows it sits next to
+  the list, with no backdrop, and the page stays usable.
 - **A side panel belongs to a page, a dock to the whole window.** A dock takes
   height, not width: the terminal docks at the bottom.
   *Why:* the header and the page are laid out by window width, so a dock
@@ -450,6 +606,8 @@ looking at": the page stays in use.
 - **A feature that cannot fit says so** instead of squeezing in: the terminal
   says it is unavailable below 1024×768.
 
+*Standards:* WCAG [1.3.4], [1.4.4], [1.4.10], [2.4.11]; APG [Dialog (Modal)].
+
 ## Terminal
 
 - **It docks at the bottom of the window, splitting the screen.** It is not a
@@ -457,13 +615,16 @@ looking at": the page stays in use.
   shortcuts.
 - **It opens from "More options".** The session survives moving between pages.
 - **It stays available during and after the installation.**
-- **It has a stop in front of it:** Enter goes in, Ctrl+Shift+L comes back out.
+- **Tab stops on it before going in:** Enter goes in, Ctrl+Shift+L comes back
+  out.
+
+*Standards:* WCAG [2.1.2].
 
 ## Recipes
 
 **A new setting in an existing area**
 
-1. Pick its visibility rung, from the four in Forms above.
+1. Pick how visible it is, from the four levels in Forms above.
 2. Add it to the area's form. Mark it optional if it is.
 3. Check it on submit, with an error the user can act on.
 4. Update the area's line on the summary if the setting changes it.
@@ -482,4 +643,48 @@ looking at": the page stays in use.
    Escape.
 3. Give it a name and a confirm button that says what it does.
 
-Then try it with the keyboard alone, and with a screen reader.
+Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
+
+[1.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html "Info and Relationships"
+[1.3.2]: https://www.w3.org/WAI/WCAG22/Understanding/meaningful-sequence.html "Meaningful Sequence"
+[1.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/sensory-characteristics.html "Sensory Characteristics"
+[1.3.4]: https://www.w3.org/WAI/WCAG22/Understanding/orientation.html "Orientation"
+[1.4.1]: https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html "Use of Color"
+[1.4.3]: https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html "Contrast (Minimum)"
+[1.4.4]: https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html "Resize Text"
+[1.4.10]: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html "Reflow"
+[1.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html "Non-text Contrast"
+[1.4.13]: https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus.html "Content on Hover or Focus"
+[2.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html "No Keyboard Trap"
+[2.2.1]: https://www.w3.org/WAI/WCAG22/Understanding/timing-adjustable.html "Timing Adjustable"
+[2.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html "Animation from Interactions (AAA)"
+[2.4.2]: https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html "Page Titled"
+[2.4.3]: https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html "Focus Order"
+[2.4.4]: https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html "Link Purpose (In Context)"
+[2.4.6]: https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html "Headings and Labels"
+[2.4.11]: https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html "Focus Not Obscured (Minimum)"
+[2.5.3]: https://www.w3.org/WAI/WCAG22/Understanding/label-in-name.html "Label in Name"
+[3.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/language-of-parts.html "Language of Parts"
+[3.2.2]: https://www.w3.org/WAI/WCAG22/Understanding/on-input.html "On Input"
+[3.3.1]: https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html "Error Identification"
+[3.3.2]: https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html "Labels or Instructions"
+[3.3.3]: https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html "Error Suggestion"
+[3.3.4]: https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html "Error Prevention (Legal, Financial, Data)"
+[4.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html "Name, Role, Value"
+[4.1.3]: https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html "Status Messages"
+[Accordion]: https://www.w3.org/WAI/ARIA/apg/patterns/accordion/
+[Alert dialog]: https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/
+[Combobox]: https://www.w3.org/WAI/ARIA/apg/patterns/combobox/
+[Dialog (Modal)]: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/
+[ss-icons]: https://www.sarasoueidan.com/blog/accessible-icon-buttons/ "Accessible Icon Buttons"
+[ss-listings]: https://www.sarasoueidan.com/blog/keyboard-friendlier-article-listings/ "Optimizing keyboard navigation using tabindex and ARIA"
+[ss-live-1]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-1/ "Accessible notifications with ARIA Live Regions (Part 1)"
+[ss-live-2]: https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/ "Accessible notifications with ARIA Live Regions (Part 2)"
+[ss-labels]: https://www.sarasoueidan.com/blog/accessible-text-labels/ "Accessible Text Labels For All"
+[pf-alert]: https://www.patternfly.org/components/alert/design-guidelines "PatternFly Alert design guidelines"
+[pf-breadcrumb]: https://www.patternfly.org/components/breadcrumb/design-guidelines "PatternFly Breadcrumb design guidelines"
+[pf-dropdown]: https://www.patternfly.org/components/menus/dropdown/design-guidelines "PatternFly Dropdown design guidelines"
+[pf-empty-state]: https://www.patternfly.org/components/empty-state/design-guidelines "PatternFly Empty state design guidelines"
+[pf-label]: https://www.patternfly.org/components/label/design-guidelines "PatternFly Label design guidelines"
+[pf-modal]: https://www.patternfly.org/components/modal/design-guidelines "PatternFly Modal design guidelines"
+[pf-tooltip]: https://www.patternfly.org/components/tooltip/design-guidelines "PatternFly Tooltip design guidelines"

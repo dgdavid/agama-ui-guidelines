@@ -40,7 +40,10 @@ would freeze them too early.
   lands on the heading or on the main content. Needs a screen reader to
   decide.
 - Where focus goes after a failed submit. One attempt kept it in place and
-  let the alert announce itself.
+  let the alert announce itself. Sara Soueidan's
+  [live regions article](https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/)
+  favors moving focus to a message that answers the user's own action, such
+  as a list of errors.
 - Back and Cancel returning to where the user left the page, while a link or
   a reload opens it at the top.
 - Every action that can fail saying so when it does. Some failed actions only
@@ -61,6 +64,9 @@ would freeze them too early.
   does, or in a breadcrumb menu like the ones discussed in
   [#3913](https://github.com/agama-project/agama/issues/3913).
 - Collapsible software categories: prototyped and parked.
+- Whether the guidelines already in Agama (forms, pages, URL state,
+  theming...) move to this repository while it is a proof of concept, or
+  stay where they are and are only linked from here.
 - Codes shown in options, such as keymap or locale codes: screen readers
   read them as part of the name.
 - The time zone clock showing the time in the user's locale format.
