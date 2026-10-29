@@ -552,6 +552,8 @@ See also React Aria on [building a combobox][ra-combobox] and
 - **Text in another language is marked with its language,** such as each
   entry in the language list.
 - **Sentence case.** Whole sentences, never stitched together from pieces.
+- **Titles don't end in a period.** Headings, dialog titles and alert titles
+  alike. A question mark stays when it matters.
 - **A note for translators on every string:** what it is, and where it shows
   up.
 - **A string freeze is never dodged by reusing a string from another
@@ -559,8 +561,9 @@ See also React Aria on [building a combobox][ra-combobox] and
   same place. New text waits, tracked as a follow-up, and strings that will be
   needed are reserved early.
 
-*Standards:* WCAG [1.3.3], [2.4.4], [2.5.3], [3.1.2], [3.3.1], [3.3.3].
-See also Sara Soueidan on [text labels][ss-labels].
+*Standards:* WCAG [1.3.3], [2.4.4], [2.5.3], [3.1.2], [3.3.1], [3.3.3];
+PatternFly [Punctuation][pf-punctuation]. See also Sara Soueidan on
+[text labels][ss-labels].
 
 ## Appearance
 
@@ -706,6 +709,7 @@ Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
 [pf-empty-state]: https://www.patternfly.org/components/empty-state/design-guidelines "PatternFly Empty state design guidelines"
 [pf-label]: https://www.patternfly.org/components/label/design-guidelines "PatternFly Label design guidelines"
 [pf-modal]: https://www.patternfly.org/components/modal/design-guidelines "PatternFly Modal design guidelines"
+[pf-punctuation]: https://www.patternfly.org/content-design/grammar/punctuation "PatternFly Punctuation"
 [pf-tooltip]: https://www.patternfly.org/components/tooltip/design-guidelines "PatternFly Tooltip design guidelines"
 [ra-combobox]: https://react-aria.adobe.com/blog/building-a-combobox "Creating an accessible autocomplete experience"
 [ra-forms]: https://react-aria.adobe.com/forms "React Aria Forms"
