@@ -14,6 +14,10 @@ It is not the final text. It tests two things:
 If both hold, the team shapes the rules from here, and the pages move to
 `doc/ui/` in the Agama repository.
 
+For now it holds more than the guidelines: also the decisions still to make,
+in [Open questions](open-questions.md), and the work still pending to make
+Agama follow them, in [TODO](TODO.md).
+
 ## What is in it
 
 | Page | What it covers |
@@ -53,9 +57,11 @@ pages.
 
 ## What is left to do
 
-Some rules describe where the UI is going rather than where it is, and some
-claims still need checking against the code. [TODO](TODO.md) lists that work,
-so a rule marked *(planned)* always has the change that will make it true.
+Some rules describe where the UI is going rather than where it is, some
+claims still need checking against the code, and some parts of Agama don't
+follow a rule yet. [TODO](TODO.md) lists that work, so a rule marked
+*(planned)* always has the change that will make it true, and a gap found in
+the code has the change that will close it.
 
 ## How to review
 

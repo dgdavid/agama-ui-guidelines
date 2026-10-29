@@ -68,7 +68,8 @@ they offer something that cannot happen.
 *The exceptions:*
 
 - A button that sends something waits while it is being sent, and keeps the
-  focus while it waits.
+  focus while it waits. A screen reader hears that it is waiting from the
+  moment it starts, such as "Save, pending".
 - A dialog's confirm button may wait for the one thing it confirms, such as a
   device picker's "Use…" until a device is picked.
 - An option in a set the user is already looking at, such as a menu or a
@@ -83,6 +84,8 @@ It stays available, and the attempt says what is missing or wrong.
 *Why:* a single step next to the button needs no explanation. A form is
 checked when it is submitted, and every form behaves the same way, so nobody
 has to guess which kind of button they are looking at.
+
+See also React Aria on [pending buttons][ra-button].
 
 ## 4. Don't get in the way
 
@@ -156,8 +159,9 @@ Where we look: [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/), the
 PatternFly's own guidelines, and the work of people and teams like the
 [GOV.UK Design System](https://design-system.service.gov.uk/),
 [Heydon Pickering](https://inclusive-components.design/),
-[Sara Soueidan](https://www.sarasoueidan.com/) or
-[Adrian Roselli](https://adrianroselli.com/).
+[Sara Soueidan](https://www.sarasoueidan.com/),
+[Adrian Roselli](https://adrianroselli.com/) or
+[React Aria](https://react-aria.adobe.com/quality).
 
 ## 9. Every screen, every zoom
 
@@ -190,3 +194,4 @@ tablet or a phone, and zoom changes the width a layout gets on any of them.
 [4.1.2]: https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html "Name, Role, Value"
 [4.1.3]: https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html "Status Messages"
 [ss-focus]: https://www.sarasoueidan.com/blog/focus-indicators/ "A guide to designing accessible, WCAG-conformant focus indicators"
+[ra-button]: https://react-aria.adobe.com/Button "React Aria Button"

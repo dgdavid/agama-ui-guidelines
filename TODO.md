@@ -29,6 +29,18 @@ until the team agrees with it, or is removed from the pages if not.
 - [ ] Agama may set its own rule over PatternFly or other guidance when it
   serves users better in an installer, never at the cost of a standard, and
   says what it departs from and why (principles, 8).
+- [ ] A waiting button says it is waiting to screen readers (principles, 3).
+  Added after reading React Aria, as are the four below.
+- [ ] The browser's own error messages never show (structure, Forms).
+- [ ] A toast stays at least five seconds, waits while the pointer or the
+  focus is on it, and can be closed (structure, Feedback).
+- [ ] A failed submit reaches screen readers, by an announcement or by moving
+  focus (structure, Keyboard and focus). WCAG asks for it, and it came up
+  while comparing React Aria's answer with the code.
+- [ ] Editing the text of a combobox clears the highlighted option
+  (structure, Keyboard and focus).
+- [ ] An option in a list or a menu holds only text and icons (structure,
+  Keyboard and focus).
 
 ## Checks against the code
 
@@ -90,6 +102,21 @@ Claims in the guidelines that still need checking.
   seen in the running UI.
 - [ ] Run the screen size checks (structure, Screen sizes): 320, 375 and 768
   wide, both orientations, and 400% zoom, have never been tried.
+- [ ] "A screen reader hears that a waiting button is waiting" (principles,
+  3): check what Orca says when a submit button starts waiting.
+- [ ] "A toast stays at least five seconds and waits while the pointer or the
+  focus is on it" (structure, Feedback): the download toast closes after 8
+  seconds whatever the user does. Make its timer wait.
+- [ ] "Editing the text of a combobox clears the highlighted option"
+  (structure, Keyboard and focus): `SearchableSelectField` follows it,
+  `MultiSelectField` highlights the best match as the user types. Check
+  that one with a screen reader before changing it.
+- [ ] "An option in a list or a menu holds only text and icons" (structure,
+  Keyboard and focus): look for options and menu items that hold a button
+  or a link.
+- [ ] The header's tooltips on a touch screen (structure, The header):
+  PatternFly shows them on the tap that presses the button. Check whether
+  one stays stuck over the dialog the button opens.
 
 ## Research
 
@@ -103,9 +130,16 @@ Claims in the guidelines that still need checking.
 - [ ] Write a "check before merge" page: the passes to run before merging UI
   work, with a matrix of machine states, testing with Orca and Firefox
   first. My notes on checking the storage page are a starting point.
+  React Aria tests with VoiceOver, JAWS, NVDA and TalkBack, not Orca, so
+  what it found about screen readers still needs trying with Orca.
 
 ## Changes in Agama
 
+- [ ] Make a failed submit reach screen readers. Today its alert is only
+  scrolled into view: focus stays on the submit button and nothing is
+  announced, while WCAG 4.1.3 asks for one or the other. Which of the two is
+  the open question on focus after a failed submit. Confirm the gap with Orca
+  first.
 - [ ] Clean up the deprecated `Page.Back`, `Page.Cancel` and `Page.Submit`
   against master: remove what nothing uses any more, and the TSDoc that still
   describes them. The guidelines are already written as if this were done.

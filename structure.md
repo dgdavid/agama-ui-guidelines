@@ -202,6 +202,10 @@ The rest of this section is about forms.
   submitted, not even a checkbox.
 - **Checked on submit.** Errors are checked again on the next submit. Errors
   from the server show at the top of the form.
+- **The browser's own error messages never show.** The form checks its fields
+  itself and says what is wrong in Agama's words.
+  *Why:* the browser writes its messages in its own language, which may not
+  be the one picked in the installer.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
   required.
 - **A value the user can't change is shown as plain text,** with the reason
@@ -313,7 +317,8 @@ first level that fits:
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
 
-*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2].
+*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2]. See also React
+Aria on [forms][ra-forms].
 
 ## Pages, side panels and dialogs
 
@@ -407,7 +412,8 @@ looking at": the page stays in use.
 - **A long side action,** such as downloading logs, gets a toast when it starts
   and another when it finishes. A toast is announced, and since it goes away
   on its own, it never holds the only copy of an error or the only way to do
-  something.
+  something. It stays at least five seconds, waits while the pointer or the
+  focus is on it, and can be closed.
 - **A form that stays open after saving says so,** telling "saved" apart from
   "nothing changed". The message goes away on the next edit.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
@@ -440,7 +446,8 @@ looking at": the page stays in use.
 
 *Standards:* WCAG [2.2.1], [4.1.3]; PatternFly [Empty state][pf-empty-state],
 [Alert][pf-alert]. See also Sara Soueidan on live regions,
-[part 1][ss-live-1] and [part 2][ss-live-2].
+[part 1][ss-live-1] and [part 2][ss-live-2], and React Aria on
+[toasts][ra-toast].
 
 ## Keyboard and focus
 
@@ -450,6 +457,14 @@ looking at": the page stays in use.
   when the user means it.
 - **Typing in a combobox filters, but never picks a match on its own:** "eth"
   never silently becomes "eth0".
+- **Editing the text of a combobox clears the highlighted option.** The arrow
+  keys highlight one again.
+  *Why:* while an option is highlighted, some screen readers stop reading
+  what is deleted or where the cursor moves.
+- **An option in a list or a menu holds only text and icons.** A row that
+  needs its own buttons belongs in a grid, not in a list.
+  *Why:* a button inside an option breaks moving through the list, with the
+  keyboard and with a screen reader.
 - **A field holding several values is still one Tab stop.** The arrow keys
   reach the values.
 - **Enter and Space toggle an expandable section;** the arrow keys never do.
@@ -492,9 +507,13 @@ looking at": the page stays in use.
   order, a tab.
 - **Moving through a list never moves focus into the side panel**
   *(playground)*. Going in takes a deliberate step.
-- **A failed submit brings its alert into view,** not the top of the page.
+- **A failed submit brings its alert into view,** not the top of the page,
+  and screen readers are told, either by announcing the alert or by moving
+  focus to it.
 
-*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion].
+*Standards:* WCAG [2.1.2], [3.2.2], [4.1.3]; APG [Combobox], [Accordion].
+See also React Aria on [building a combobox][ra-combobox] and
+[list boxes][ra-listbox].
 
 ## Words
 
@@ -688,3 +707,7 @@ Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
 [pf-label]: https://www.patternfly.org/components/label/design-guidelines "PatternFly Label design guidelines"
 [pf-modal]: https://www.patternfly.org/components/modal/design-guidelines "PatternFly Modal design guidelines"
 [pf-tooltip]: https://www.patternfly.org/components/tooltip/design-guidelines "PatternFly Tooltip design guidelines"
+[ra-combobox]: https://react-aria.adobe.com/blog/building-a-combobox "Creating an accessible autocomplete experience"
+[ra-forms]: https://react-aria.adobe.com/forms "React Aria Forms"
+[ra-listbox]: https://react-aria.adobe.com/ListBox "React Aria ListBox"
+[ra-toast]: https://react-aria.adobe.com/Toast "React Aria Toast"

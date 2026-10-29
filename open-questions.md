@@ -3,6 +3,12 @@
 What the guidelines deliberately leave undecided. Writing these as rules now
 would freeze them too early.
 
+Most of these questions have more than one right answer. WCAG and the W3C
+patterns allow several ways, and each source we follow, such as React Aria or
+Sara Soueidan, picks one for its own users. What those sources say is a data
+point, not the answer. Among the options the standards allow, Agama picks the
+one that best suits an installer and the people using it.
+
 ## Came up, not settled
 
 - In multi-value fields, Tab commits the value and keeps focus there. That
@@ -33,7 +39,8 @@ would freeze them too early.
 - The width at which the side panel stops covering the page and sits next to
   the list.
 - A way to jump between the list and the side panel on wide screens, such as
-  landmarks or a shortcut.
+  landmarks or a shortcut. React Aria uses F6 and Shift+F6 to move between
+  such regions, toasts included.
 - A side panel that covers the page without blocking it, with careful focus
   handling instead of a backdrop.
 - Moving focus to the content of a page after going to it, and whether it
@@ -43,7 +50,9 @@ would freeze them too early.
   let the alert announce itself. Sara Soueidan's
   [live regions article](https://www.sarasoueidan.com/blog/accessible-notifications-with-aria-live-regions-part-2/)
   favors moving focus to a message that answers the user's own action, such
-  as a list of errors.
+  as a list of errors. React Aria moves it to the first field with an error,
+  or to an alert at the top of the form. Today focus stays on the submit
+  button, and the alert is scrolled into view but not announced.
 - Back and Cancel returning to where the user left the page, while a link or
   a reload opens it at the top.
 - Every action that can fail saying so when it does. Some failed actions only
@@ -78,6 +87,11 @@ would freeze them too early.
 - Lists of names, such as the devices an action touches: name them up to a
   limit and count the rest ("sda, sdb and 3 more"), joined the way the
   user's language joins lists. The limit is not decided.
+- What "select all" selects while a filter hides some items. For React Aria,
+  all means all, the hidden items too.
+- Rows that open something and can also be selected. React Aria's default:
+  while nothing is selected, a click or Enter opens the row, Space selects
+  it, and the arrow keys never change the selection.
 
 ## Not settled anywhere yet
 
