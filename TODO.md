@@ -131,6 +131,8 @@ Claims in the guidelines that still need checking.
 - [ ] Write a "check before merge" page: the passes to run before merging UI
   work, with a matrix of machine states, testing with Orca and Firefox
   first. My notes on checking the storage page are a starting point.
+  React Aria tests with VoiceOver, JAWS, NVDA and TalkBack, not Orca, so
+  what it found about screen readers still needs trying with Orca.
 
 ## Changes in Agama
 

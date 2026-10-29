@@ -317,7 +317,8 @@ first level that fits:
 4. **An entry at the end of a list,** for the rare path ("Browse with
    details…"). It never becomes a second control next to the field.
 
-*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2].
+*Standards:* WCAG [1.3.1], [2.4.6], [3.2.2], [3.3.2], [4.1.2]. See also React
+Aria on [forms][ra-forms].
 
 ## Pages, side panels and dialogs
 
@@ -445,7 +446,8 @@ looking at": the page stays in use.
 
 *Standards:* WCAG [2.2.1], [4.1.3]; PatternFly [Empty state][pf-empty-state],
 [Alert][pf-alert]. See also Sara Soueidan on live regions,
-[part 1][ss-live-1] and [part 2][ss-live-2].
+[part 1][ss-live-1] and [part 2][ss-live-2], and React Aria on
+[toasts][ra-toast].
 
 ## Keyboard and focus
 
@@ -507,7 +509,8 @@ looking at": the page stays in use.
   *(playground)*. Going in takes a deliberate step.
 - **A failed submit brings its alert into view,** not the top of the page.
 
-*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion].
+*Standards:* WCAG [2.1.2], [3.2.2]; APG [Combobox], [Accordion]. See also
+React Aria on [building a combobox][ra-combobox] and [list boxes][ra-listbox].
 
 ## Words
 
@@ -701,3 +704,7 @@ Then try it with the keyboard alone, with a screen reader, and at 400% zoom.
 [pf-label]: https://www.patternfly.org/components/label/design-guidelines "PatternFly Label design guidelines"
 [pf-modal]: https://www.patternfly.org/components/modal/design-guidelines "PatternFly Modal design guidelines"
 [pf-tooltip]: https://www.patternfly.org/components/tooltip/design-guidelines "PatternFly Tooltip design guidelines"
+[ra-combobox]: https://react-aria.adobe.com/blog/building-a-combobox "Creating an accessible autocomplete experience"
+[ra-forms]: https://react-aria.adobe.com/forms "React Aria Forms"
+[ra-listbox]: https://react-aria.adobe.com/ListBox "React Aria ListBox"
+[ra-toast]: https://react-aria.adobe.com/Toast "React Aria Toast"
