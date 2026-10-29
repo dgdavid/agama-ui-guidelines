@@ -68,7 +68,8 @@ they offer something that cannot happen.
 *The exceptions:*
 
 - A button that sends something waits while it is being sent, and keeps the
-  focus while it waits.
+  focus while it waits. A screen reader hears that it is waiting from the
+  moment it starts, such as "Save, pending".
 - A dialog's confirm button may wait for the one thing it confirms, such as a
   device picker's "Use…" until a device is picked.
 - An option in a set the user is already looking at, such as a menu or a

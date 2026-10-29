@@ -202,6 +202,10 @@ The rest of this section is about forms.
   submitted, not even a checkbox.
 - **Checked on submit.** Errors are checked again on the next submit. Errors
   from the server show at the top of the form.
+- **The browser's own error messages never show.** The form checks its fields
+  itself and says what is wrong in Agama's words.
+  *Why:* the browser writes its messages in its own language, which may not
+  be the one picked in the installer.
 - **Mark what is optional**, with "(optional)". No asterisks for what is
   required.
 - **A value the user can't change is shown as plain text,** with the reason
@@ -407,7 +411,8 @@ looking at": the page stays in use.
 - **A long side action,** such as downloading logs, gets a toast when it starts
   and another when it finishes. A toast is announced, and since it goes away
   on its own, it never holds the only copy of an error or the only way to do
-  something.
+  something. It stays at least five seconds, waits while the pointer or the
+  focus is on it, and can be closed.
 - **A form that stays open after saving says so,** telling "saved" apart from
   "nothing changed". The message goes away on the next edit.
 - **Recomputing part of a form keeps the old content on screen.** Any loading
@@ -450,6 +455,14 @@ looking at": the page stays in use.
   when the user means it.
 - **Typing in a combobox filters, but never picks a match on its own:** "eth"
   never silently becomes "eth0".
+- **Editing the text of a combobox clears the highlighted option.** The arrow
+  keys highlight one again.
+  *Why:* while an option is highlighted, some screen readers stop reading
+  what is deleted or where the cursor moves.
+- **An option in a list or a menu holds only text and icons.** A row that
+  needs its own buttons belongs in a grid, not in a list.
+  *Why:* a button inside an option breaks moving through the list, with the
+  keyboard and with a screen reader.
 - **A field holding several values is still one Tab stop.** The arrow keys
   reach the values.
 - **Enter and Space toggle an expandable section;** the arrow keys never do.

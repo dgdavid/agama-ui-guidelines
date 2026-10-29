@@ -29,6 +29,15 @@ until the team agrees with it, or is removed from the pages if not.
 - [ ] Agama may set its own rule over PatternFly or other guidance when it
   serves users better in an installer, never at the cost of a standard, and
   says what it departs from and why (principles, 8).
+- [ ] A waiting button says it is waiting to screen readers (principles, 3).
+  Added after reading React Aria, as are the four below.
+- [ ] The browser's own error messages never show (structure, Forms).
+- [ ] A toast stays at least five seconds, waits while the pointer or the
+  focus is on it, and can be closed (structure, Feedback).
+- [ ] Editing the text of a combobox clears the highlighted option
+  (structure, Keyboard and focus).
+- [ ] An option in a list or a menu holds only text and icons (structure,
+  Keyboard and focus).
 
 ## Checks against the code
 
@@ -90,6 +99,25 @@ Claims in the guidelines that still need checking.
   seen in the running UI.
 - [ ] Run the screen size checks (structure, Screen sizes): 320, 375 and 768
   wide, both orientations, and 400% zoom, have never been tried.
+- [ ] "A screen reader hears that a waiting button is waiting" (principles,
+  3): check what Orca says when a submit button starts waiting.
+- [ ] "A toast stays at least five seconds and waits while the pointer or the
+  focus is on it" (structure, Feedback): the download toast closes after 8
+  seconds whatever the user does. Make its timer wait.
+- [ ] "Editing the text of a combobox clears the highlighted option"
+  (structure, Keyboard and focus): `SearchableSelectField` follows it,
+  `MultiSelectField` highlights the best match as the user types. Check
+  that one with a screen reader before changing it.
+- [ ] "An option in a list or a menu holds only text and icons" (structure,
+  Keyboard and focus): look for options and menu items that hold a button
+  or a link.
+- [ ] The header's tooltips on a touch screen (structure, The header):
+  PatternFly shows them on the tap that presses the button. Check whether
+  one stays stuck over the dialog the button opens.
+- [ ] "A failed submit brings its alert into view" (structure, Keyboard and
+  focus) reaches screen readers too: today the alert is only scrolled into
+  view, focus stays on the submit button and nothing is announced. Confirm
+  it with Orca.
 
 ## Research
 
