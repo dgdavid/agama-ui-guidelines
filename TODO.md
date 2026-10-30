@@ -195,6 +195,10 @@ Claims in the guidelines that still need checking.
   encryption, LVM, space policy). Make the full list first.
 - [ ] Once the ESLint `translated-prop` rule lands, mention it in the
   Translations section of guidelines.md.
+- [ ] Drop the final period from "Could not authenticate against the
+  server.", the login page's error title (`core/LoginPage.tsx`), the one
+  title on master that still ends in one (structure, Words). It changes a
+  translated string, so it waits for any string freeze to end.
 
 ## Ideas
 
