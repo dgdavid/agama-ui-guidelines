@@ -30,6 +30,10 @@ If both hold, the team shapes the rules from here, and the pages move to
 a guideline. It tells how the interface got here: the versions before this
 one, and why each one changed, so the same mistakes are not made twice.
 
+[Why Agama is not a wizard](why-not-a-wizard.md) is not a guideline either. It
+explains one of the earliest decisions behind the interface: starting from the
+product's defaults and an overview, instead of a sequence of steps.
+
 ## How it was built
 
 1. **From the pull requests.** An AI assistant (Claude Code) was told to read
