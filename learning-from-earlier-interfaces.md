@@ -61,6 +61,9 @@ to the product, such as how to log in to the new system. Agama leaves those
 to the user on purpose, and the summary says what is still missing, so they
 are the only settings everyone has to visit before installing.
 
+[Why Agama is not a wizard](why-not-a-wizard.md) goes through the reasons in
+more detail.
+
 ## Timeline
 
 | When | What changed | Sources |
